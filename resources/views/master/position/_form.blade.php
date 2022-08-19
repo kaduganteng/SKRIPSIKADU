@@ -22,22 +22,7 @@
             @enderror
         </div> 
     </div>
-    <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Salary</label>
-        <div class="col-8 col-md-4 col-lg-4">
-            <div class="input-group">
-                <div class="input-group-prepend">
-                    <span class="input-group-text">Rp</span>
-                </div>
-                <input type="text" name="salary" class="form-control @error('salary') is-invalid @enderror" value="{{ old('salary', $position->salary ?? '') }}" placeholder="100.000" autocomplete="off" oninput="format(this)">
-            </div>
-            @error('salary')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('salary') }}</strong>
-                </span>
-            @enderror
-        </div> 
-    </div> 
+  
 
     <div class="form-group row">
         <label class="col-12 col-md-4 col-xs-4 col-form-label">Status</label> 
@@ -45,7 +30,7 @@
             <select name="status" class="form-control select2 @error('status') is-invalid @enderror">
                 <option value="">Pilih</option>
                 <option value="Staff" {{ 'Staff' == old('status', $position->status ?? '') ? 'selected' : '' }}>Staff</option>
-                <option value="Daily Worker" {{ 'Daily Worker' == old('status', $position->status ?? '') ? 'selected' : '' }}>Daily Worker</option>
+                <option value="Guru" {{ 'Guru' == old('status', $position->status ?? '') ? 'selected' : '' }}>Guru</option>
             </select>
             @error('status')
                 <span class="invalid-feedback" role="alert">

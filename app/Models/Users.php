@@ -12,6 +12,8 @@ class Users extends Authenticatable
 {
     use Notifiable, SoftDeletes;
 
+
+    
     protected $fillable = ['role_id', 'email', 'name', 'username', 'foto', 'password'];
     protected $hidden = ['password', 'remember_token'];
     protected $dates = ['deleted_at'];
@@ -27,7 +29,11 @@ class Users extends Authenticatable
         }
         return false;
     }
-
+      
+    function pemeberkasan()
+    {
+        return $this->hasMany(PemberkasanModel::class);
+    }
     public function staff() {
         return $this->hasOne(Staff::class);
     }

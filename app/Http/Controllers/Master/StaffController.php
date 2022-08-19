@@ -38,6 +38,7 @@ class StaffController extends Controller
             'phone'=>'required|max:13',
             'position_id'=>'required',
             'departement_id'=>'required',
+            'nip'=>'required',
             'addres'=>'required',
         ]);
 

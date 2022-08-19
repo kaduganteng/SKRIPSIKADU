@@ -112,6 +112,14 @@ Route::middleware('auth')->group(function(){
         });
     });
 
+    //pemberkasan
+    Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
+    Route::get('pemberkasan/create', 'PemberkasanController@create')->name('pemberkasan.create');
+    Route::post('pemberkasan', 'PemberkasanController@store')->name('pemberkasan.store');
+    Route::get('pemberkasan/{pemberkasan}/edit', 'PemberkasanController@edit')->name('pemberkasan.edit');
+    Route::patch('pemberkasan/{pemberkasan}/update', 'PemberkasanController@update')->name('pemberkasan.update');
+
+
     Route::get('schedule', 'ScheduleController@index')->name('schedule.index');
     // cuti staff
     Route::get('cuti', 'CutiController@index')->name('cuti.index');

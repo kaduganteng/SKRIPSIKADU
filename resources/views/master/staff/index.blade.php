@@ -30,7 +30,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Staff
+                                Data Guru dan Staff
                                 <span id="count" class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
@@ -41,8 +41,9 @@
                                         <th>Tgl. Lahir</th>
                                         <th>Alamat</th>
                                         <th>No. Telpon</th>
-                                        <th>Position</th>
-                                        <th>Departement</th>
+                                        <th>Jabatan</th>
+                                        <th>Status</th>
+                                        
                                     </tr>
                                 </thead> 
                                 <tbody>
@@ -66,11 +67,12 @@
                                             <td>{{ $item->birth ?? '' }}</td> 
                                             <td>{{ $item->addres ?? '' }}</td> 
                                             <td>{{ $item->phone ?? '' }}</td> 
+                                            <td>{{ $item->departement->name ?? '' }}</td>
                                             <td style="line-height: 1">
                                                 {{ $item->position->name ?? '' }} <br>
                                                 <small><span class="badge {{ $item->position->status == 'Staff' ? 'badge-info' : 'badge-secondary' }}">{{ $item->position->status ?? '' }}</span></small>
                                             </td> 
-                                            <td>{{ $item->departement->name ?? '' }}</td> 
+                                             
                                         </tr>
                                     @endforeach
                                 </tbody>

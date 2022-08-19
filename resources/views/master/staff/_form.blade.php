@@ -8,7 +8,7 @@
         </div>
     </div>
     <div class="card-header with-border pl-0 pb-1">
-        <span class="col-form-label text-bold">STAFF</span>
+        <span class="col-form-label text-bold">PEGAWAI</span>
     </div>
     <br> 
     <div class="form-group row">
@@ -58,9 +58,24 @@
             @enderror
         </div> 
     </div>
-
     <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Position <span class="text-danger">*</span></label> 
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Jabatan <span class="text-danger">*</span></label> 
+        <div class="col-12 col-md-5 col-lg-5">
+            <select name="departement_id" class="form-control select2 @error('departement_id') is-invalid @enderror">
+                <option value=""></option>
+                @foreach ($departement as $item)
+                    <option value="{{ $item->id }}" {{ $item->id == old('departement_id', $staff->departement_id ?? '') ? 'selected' : '' }}>{{ $item->name }}</option>
+                @endforeach
+            </select>
+            @error('departement_id')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('departement_id') }}</strong>
+                </span>
+            @enderror
+        </div> 
+    </div>
+    <div class="form-group row">
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Posisi <span class="text-danger">*</span></label> 
         <div class="col-12 col-md-5 col-lg-5">
             <select name="position_id" class="form-control select2 @error('position_id') is-invalid @enderror">
                 <option value=""></option>
@@ -76,18 +91,14 @@
         </div> 
     </div>
 
+    
     <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Departement <span class="text-danger">*</span></label> 
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">NIP<span class="text-danger">*</span></label> 
         <div class="col-12 col-md-5 col-lg-5">
-            <select name="departement_id" class="form-control select2 @error('departement_id') is-invalid @enderror">
-                <option value=""></option>
-                @foreach ($departement as $item)
-                    <option value="{{ $item->id }}" {{ $item->id == old('departement_id', $staff->departement_id ?? '') ? 'selected' : '' }}>{{ $item->name }}</option>
-                @endforeach
-            </select>
-            @error('departement_id')
+            <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $staff->nip ?? '') }}" placeholder="1234...." onkeypress="return hanyaAngka(this)">
+            @error('nip')
                 <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('departement_id') }}</strong>
+                    <strong>{{ $errors->first('nip') }}</strong>
                 </span>
             @enderror
         </div> 

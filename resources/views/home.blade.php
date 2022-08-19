@@ -41,7 +41,8 @@
 				<div class="row">
 					<div class="col-md-10 offset-md-1">
 						<div class="col-md-5 col-sm-12 col-12 mb-3 float-left">
-							<div class="text-center">Jumlah Staff berdasarkan Departement</div>
+							<div class="text-center">Ranking 3 Terbesar Guru Terbaik
+                            </div>
 							<canvas id="BarChartStaffDepartement" width="200" height="200"></canvas>
 						</div>
 						<div class="col-md-5 col-sm-12 col-12 mb-3 float-right">

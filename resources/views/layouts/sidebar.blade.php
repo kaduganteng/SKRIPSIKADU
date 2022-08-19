@@ -37,13 +37,13 @@
                         <li class="nav-item">
                             <a href="{{ route('master.position.index') }}" class="nav-link {{ $sub == 'position' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
-                                <p>Position</p>
+                                <p>Posisi</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="{{ route('master.departement.index') }}" class="nav-link {{ $sub == 'departement' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
-                                <p>Departement</p>
+                                <p>Jabatan</p>
                             </a>
                         </li>
                         <li class="nav-item">
@@ -52,6 +52,7 @@
                                 <p>Daftar Guru</p>
                             </a>
                         </li>
+                        
                     </ul>
                 </li>
                
@@ -66,7 +67,13 @@
                 <li class="nav-item">
                     <a href="{{ route('schedule.index') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-calendar"></i>
-                        <p>Survey *belom jadi</p>
+                        <p>Jadwal Kehadiran</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{{ route('pemberkasan.index') }}" class="nav-link {{ $page == 'pemberkasan' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-calendar"></i>
+                        <p>Pemberkasan</p>
                     </a>
                 </li>
 
@@ -80,7 +87,7 @@
                     <li class="nav-item">
                         <a href="{{ route('salary.index') }}" class="nav-link {{ $page == 'salary' ? 'active' : '' }}">
                             <i class="nav-icon fa fa-money"></i>
-                            <p>Administrasi *belom jadi</p>
+                            <p>Gaji</p>
                         </a>
                     </li>
                     <li class="nav-item">

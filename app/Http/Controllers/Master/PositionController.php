@@ -20,7 +20,7 @@ class PositionController extends Controller
 
     public function create()
     {
-        return view('master.position.create', ['title'=>'Tambah Position']);
+        return view('master.position.create', ['title'=>'Tambah Posisi']);
     }
 
     public function store(Request $request)

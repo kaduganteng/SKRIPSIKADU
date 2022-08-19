@@ -23,14 +23,19 @@
                                             <td>{{ $staff->name }}</td>
                                         </tr>
                                         <tr>
-                                            <td width="10">Position</td>
+                                            <td width="10">Status</td>
                                             <td width="5">:</td>
                                             <td>{{ $staff->position->name ?? ''}}</td>
                                         </tr>
                                         <tr>
-                                            <td width="10">Departement</td>
+                                            <td width="10">Jabatan</td>
                                             <td width="5">:</td>
                                             <td>{{ $staff->departement->name ?? '' }}</td>
+                                        </tr>
+                                        <tr>
+                                            <td width="10">nip</td>
+                                            <td width="5">:</td>
+                                            <td>{{ $staff->nip ?? '' }}</td>
                                         </tr>
                                         <tr>
                                             <td>Tgl. Lahir</td>

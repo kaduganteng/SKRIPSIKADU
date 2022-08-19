@@ -11,10 +11,12 @@ class CreateTableStaff extends Migration
         Schema::create('tb_staff', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('position_id');
+            $table->string('photo');
             $table->unsignedInteger('departement_id');
             $table->unsignedInteger('users_id')->nullable();
             $table->string('name');
             $table->date('birth');
+            $table->string('nip');
             $table->text('addres')->nullable();
             $table->date('startdate');
             $table->text('phone');

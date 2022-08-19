@@ -30,7 +30,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Position
+                                Data Posisi
                                 <span id="count" class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
@@ -39,7 +39,7 @@
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama</th> 
                                         <th>Status</th>
-                                        <th>Salary</th>
+                                       
                                     </tr>
                                 </thead> 
                                 <tbody>
@@ -63,7 +63,7 @@
                                             <td>
                                                 <span class="badge {{ $item->status == 'Staff' ? 'badge-info' : 'badge-secondary' }}">{{ $item->status ?? '' }}</span>
                                             </td> 
-                                            <td>{{ number_format($item->salary ?? '', 0, ',', '.')}}</td> 
+                                           
                                         </tr>
                                     @endforeach
                                 </tbody>
