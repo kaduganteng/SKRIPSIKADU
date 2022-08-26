@@ -30,7 +30,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Departement
+                                Data Jabatan
                                 <span id="count" class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">

@@ -55,6 +55,30 @@
                         
                     </ul>
                 </li>
+
+                <li class="nav-item has-treeview {{ $page == 'absensi' ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-laptop"></i>
+                        <p>
+                            Absensi
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
+                    </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('schedule.index') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
+                            <i class="nav-icon fa fa-calendar"></i>
+                            <p>Jadwal Kehadiran</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                        <a href="{{ route('absensi.index') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tasks"></i>
+                            <p>Data Absensi</p>
+                        </a>
+                        </li>   
+                    </ul>
+                </li>
                
                 {{-- <li class="nav-item">
                     <a href="{{ route('overtime.index') }}" class="nav-link {{ $page == 'overtime' ? 'active' : '' }}">
@@ -64,12 +88,7 @@
                 </li> --}}
                 @endif
 
-                <li class="nav-item">
-                    <a href="{{ route('schedule.index') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-calendar"></i>
-                        <p>Jadwal Kehadiran</p>
-                    </a>
-                </li>
+               
                 <li class="nav-item has-treeview {{ $page == 'pemberkasan' ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ $page == 'pemberkasan' ? 'active' : '' }}">
                         <i class="nav-icon fa fa-laptop"></i>
@@ -109,12 +128,7 @@
                             <p>Gaji</p>
                         </a>
                     </li>
-                    <li class="nav-item">
-                        <a href="{{ route('absensi.index') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-tasks"></i>
-                            <p>Absensi</p>
-                        </a>
-                    </li>
+                   
 
                     <li class="nav-item">
                         <a href="{{ route('quisioner.index') }}" class="nav-link {{ $page == 'quisioner' ? 'active' : '' }}">

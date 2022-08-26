@@ -115,6 +115,7 @@ Route::middleware('auth')->group(function(){
     });
     //Quisioner
     Route::get('quisioner', 'QuisionerController@index')->name('quisioner.index');
+    Route::get('quisioner/create', 'QuisionerController@create')->name('quisioner.create');
     Route::post('quisioner/store', 'QuisionerController@store')->name('quisioner.store');
     //pemberkasan
     Route::get('pemberkasan/indexuser', 'PemberkasanController@indexuser')->name('pemberkasan.indexuser');

@@ -18,7 +18,7 @@ class ScheduleController extends Controller
 
     public function create()
     {
-        $data['title'] = "Buat Schedule";
+        $data['title'] = "Buat Jadwal";
         $data['staff'] = Staff::all();
         $value = new Keterangan();
         $data['ket_schedule'] = $value->ket_schedule;
@@ -46,7 +46,7 @@ class ScheduleController extends Controller
 
     public function edit(Schedule $schedule)
     {
-        $data['title'] = "Edit schedule";
+        $data['title'] = "Edit Jadwal";
         $data['staff'] = Staff::all();
         $value = new Keterangan();
         $data['ket_schedule'] = $value->ket_schedule;

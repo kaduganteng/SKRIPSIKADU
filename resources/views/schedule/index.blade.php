@@ -17,7 +17,7 @@
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
                         <a href="{{ route('schedule.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
-                            <i class="fas fa-user-plus fa-fw"></i> Tambah
+                            <i class="fas fa-user-plus fa-fw"></i> Buat Jadwal
                         </a>
                     </div>
                 </form>
@@ -30,14 +30,14 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Jadwal Staf
+                                Data Jam Kerja Guru
                                 <span id="count" class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
-                                        <th>Staff</th>
+                                        <th>Nama</th>
                                         <th>Tgl. Masuk</th>
                                         <th>Ket. Jadwal</th>
                                         <th>Status</th>

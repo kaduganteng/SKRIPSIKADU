@@ -10,13 +10,22 @@ class QuisionerController extends Controller
 {
   public function index()
   {  
-    $staff = Staff::all();
+    $quisioner = Quisioner::all();  
     return view ('quisioner.index',[
-        'staff' =>$staff
+        'quisioner' =>$quisioner
     ]);
   }
 
-  public function store()
+  public function create()
+  { $data['title'] = "QUISIONER";
+    $staff = Staff::all();
+    return view ('quisioner.create',$data,[
+        'staff'=>$staff,
+        
+    ]);
+  }
+
+  public function store(Request $request)
   { 
     $quisioner = Quisioner::create([
         'guru_id'=>$request->guru_id,
@@ -27,7 +36,7 @@ class QuisionerController extends Controller
         'point5'=>$request->point5,
     ]);
     dd();
-    return redirect()->back();
+    return redirect()->route('quisioner')->with($message);
 
   }
 }

@@ -1,170 +1,118 @@
 @extends('layouts.app')
 @section('styles')
+    <link rel="stylesheet" href="{{ asset ('css/sweetalert.css') }}">
 @endsection
 @section('content')
-<div class="content-wrapper pb-5 pt-3">
-    <section class="content pb-3">
-        <div class="col-md-12">
-            <div class="row">
-                <div class="col-12">
-                <div class="card">
-                            <div class="card-header bg-light">
-                                <h3 class="card-title back-top" style="margin-top: 5px;">
-                                    <a href="#" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
-                                        <i class="fa fa-arrow-left fa-fw"></i></span>
-                                    </a>
-                                </h3>
-                                <div class="float-left offset-5 pt-1">
-                                    <span class="d-none d-md-block d-lg-block">QUISIONER</span>
+    <div class="content-wrapper pb-3">
+        <div class="content-header">
+            <div class="container-fluid">
+                <form>
+                    <div class="form-inline">
+                        <div class="input-group app-shadow">
+                            <div class="input-group-append">
+                                <div class="input-group-text bg-white border-0">
+                                    <span><i class="fa fa-search"></i> </span>
                                 </div>
-                                
-                            </div> 
-                            <div class="container-fluid row p-2" style="font-size: 14px;">
-                            <select name="guru_id">
-                            @if(!empty(@$data->guru_id))
-                            <option value="{{@$data->guru_id}}" {{!empty($data->name)?'selected':''}}>{{$data->name}}</option>
-                            @endif
-                            @foreach($staff as $s)
-                            <option value="{{$s->id}}">{{$s->name}}</option>
-                            @endforeach
-                            </select>
                             </div>
-
-                    <div class="from-group">
-                        <label for="quisioner">
-                        bagaimana guru ini point 1
-                         </label>
-                        <div class="form-check">
-                        <div>
-                        <input type="radio" class="form-check-input" name="point1" id="point1" value="25">
-                        <label for="point1" class="form-check-label">
-                            cukup
-                        </label>
-                        </div>
-                       <div>
-                       <input type="radio" class="form-check-input" name="point1" id="point1" value="50">
-                        <label for="point1" class="form-check-label">
-                            baik
-                        </label> 
-                       </div>
-                       <div>
-
-                       <input type="radio" class="form-check-input" name="point1" id="point1" value="100">
-                        <label for="point1" class="form-check-label">
-                           sangat baik
-                        </label> 
-                       </div>
-                    </div><div class="from-group">
-                        <label for="quisioner">
-                        bagaimana guru ini pint 2
-                         </label>
-                        <div class="form-check">
-                        <div>
-                        <input type="radio" class="form-check-input" name="point2" id="point2" value="25">
-                        <label for="point2" class="form-check-label">
-                            cukup
-                        </label>
-                        </div>
-                       <div>
-                       <input type="radio" class="form-check-input" name="point2" id="point2" value="50">
-                        <label for="point2" class="form-check-label">
-                            baik
-                        </label> 
-                       </div>
-                       <div>
-
-                       <input type="radio" class="form-check-input" name="point2" id="point2" value="100">
-                        <label for="point2" class="form-check-label">
-                           sangat baik
-                        </label> 
-                       </div>
-                    </div><div class="from-group">
-                        <label for="quisioner">
-                        bagaimana guru ini point 3
-                         </label>
-                        <div class="form-check">
-                        <div>
-                        <input type="radio" class="form-check-input" name="point3" id="point3" value="25">
-                        <label for="point3" class="form-check-label">
-                            cukup
-                        </label>
-                        </div>
-                       <div>
-                       <input type="radio" class="form-check-input" name="point3" id="point3" value="50">
-                        <label for="point3" class="form-check-label">
-                            baik
-                        </label> 
-                       </div>
-                       <div>
-
-                       <input type="radio" class="form-check-input" name="point3" id="point3" value="100">
-                        <label for="point3" class="form-check-label">
-                           sangat baik
-                        </label> 
-                       </div>
-                    </div><div class="from-group">
-                        <label for="quisioner">
-                        bagaimana guru ini point 4
-                         </label>
-                        <div class="form-check">
-                        <div>
-                        <input type="radio" class="form-check-input" name="point4" id="point4" value="25">
-                        <label for="point4" class="form-check-label">
-                            cukup
-                        </label>
-                        </div>
-                       <div>
-                       <input type="radio" class="form-check-input" name="point4" id="point4" value="50">
-                        <label for="point4" class="form-check-label">
-                            baik
-                        </label> 
-                       </div>
-                       <div>
-
-                       <input type="radio" class="form-check-input" name="point4" id="point4" value="100">
-                        <label for="point4" class="form-check-label">
-                           sangat baik
-                        </label> 
-                       </div>
-                    </div><div class="from-group">
-                        <label for="quisioner">
-                        bagaimana guru ini point 5
-                         </label>
-                        <div class="form-check">
-                        <div>
-                        <input type="radio" class="form-check-input" name="point5" id="point5" value="25">
-                        <label for="point5" class="form-check-label">
-                            cukup
-                        </label>
-                        </div>
-                       <div>
-                       <input type="radio" class="form-check-input" name="point5" id="point5" value="50">
-                        <label for="point5" class="form-check-label">
-                            baik
-                        </label> 
-                       </div>
-                       <div>
-
-                       <input type="radio" class="form-check-input" name="point5" id="point5" value="100">
-                        <label for="point5" class="form-check-label">
-                           sangat baik
-                        </label> 
-                       </div>
+                            <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
+                        </div> 
+                        <a href="{{ route('quisioner.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
+                            <i class="fa fa-search"></i> Lihat Form Quisioner
+                        </a>
                     </div>
+                </form>
+            </div>
+        </div>
+    
+        <div class="content pb-5">
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                Data Quisioner
+                                
                             </div>
-                            </div>
-                            <div class="card-footer p-2">
-                                <button type="submit " class="btn btn-info   btn-sm">SELESAI</button>
-                            </div>
-                            </form>
-                </div>
-
+                            <table id="datatable" class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th class="text-center" style="width: 100px;">#</th> 
+                                        <th>Nama</th> 
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                    @foreach ($quisioner as $item)
+                                        <tr id="hide{{ $item->id }}">
+                                            <td class="text-center">
+                                                <a href="#" class="text-secondary nav-link p-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    <div class="dropdown-divider"></div>
+                                                    <a class="dropdown-item" href="javascript:void(0)" onClick="hapus({{$item->id}})">
+                                                        <i class="far fa-trash-alt mr-2"></i> Hapus
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>{{ $item->guru_id ?? '' }}</td> 
+                                            <td>{{$item->point1 ?? '' }}</td>
+                                            <td>{{$item->point2 ?? '' }}</td>
+                                            <td>{{$item->point3 ?? '' }}</td>
+                                            <td>{{$item->point4 ?? '' }}</td>
+                                            <td>{{$item->point5 ?? '' }}</td>
+                                        </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
-</div>
+    </div>
+
+    <a href="{{ route('master.departement.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
+        <span><i class="fas fa-user-plus fa-sm align-middle"></i></span>
+    </a>
 
 @endsection
 
-
+@section('scripts')
+    <script src="https://cdn.datatables.net/1.10.19/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.19/js/dataTables.bootstrap4.min.js"></script>
+    <script src="{{ asset('js/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('js/sweetalert-dev.js') }}"></script>
+    <script src="{{ asset('js/datatables.js') }}"></script>
+    <script>
+        function hapus(id){
+            swal({
+            title: 'Yakin.. ?',
+            text: "Data anda akan dihapus. Tekan tombol yes untuk melanjutkan.",
+            type: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes!',
+            closeOnConfirm: false,
+            closeOnCancel: false
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    $.ajax({
+                        url:"{{URL::to('/master/departement/destroy')}}",
+                        data:"id=" + id ,
+                        success: function(data)
+                        {
+                            swal("Deleted", data.message, "success");
+                            $("#count").html(data.count);
+                            $("#hide"+id).hide(300);
+                        }
+                    });
+                    
+                }else{
+                    swal("Canceled", "Anda Membatalkan! :)","error");
+                }
+            });
+        }
+    </script>
+@endsection
