@@ -103,19 +103,23 @@ Route::middleware('auth')->group(function(){
         Route::get('absensi/detail/periode={periode}', 'AbsensiController@show')->name('absensi.detail');
         Route::get('absensi/export/excel/periode={periode}/filter={filter}', 'AbsensiController@excel')->name('absensi.export.excel');
 
-        Route::middleware('role:admin|accounting')->group(function(){
+        Route::middleware('role:admin')->group(function(){
             Route::get('schedule/create', 'ScheduleController@create')->name('schedule.create');
             Route::post('schedule', 'ScheduleController@store')->name('schedule.store');
             Route::get('schedule/{schedule}/edit', 'ScheduleController@edit')->name('schedule.edit');
             Route::patch('schedule/{schedule}/update', 'ScheduleController@update')->name('schedule.update');
             Route::get('schedule/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
+            Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
         });
-    });
 
+    });
+    //Quisioner
+    Route::get('quisioner', 'QuisionerController@index')->name('quisioner.index');
+    Route::post('quisioner/store', 'QuisionerController@store')->name('quisioner.store');
     //pemberkasan
-    Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
+    Route::get('pemberkasan/indexuser', 'PemberkasanController@indexuser')->name('pemberkasan.indexuser');
     Route::get('pemberkasan/create', 'PemberkasanController@create')->name('pemberkasan.create');
-    Route::post('pemberkasan', 'PemberkasanController@store')->name('pemberkasan.store');
+    Route::post('pemberkasan/store', 'PemberkasanController@store')->name('pemberkasan.store');
     Route::get('pemberkasan/{pemberkasan}/edit', 'PemberkasanController@edit')->name('pemberkasan.edit');
     Route::patch('pemberkasan/{pemberkasan}/update', 'PemberkasanController@update')->name('pemberkasan.update');
 

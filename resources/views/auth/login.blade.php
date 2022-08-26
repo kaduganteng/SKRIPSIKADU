@@ -8,7 +8,7 @@
                 SDN MARGAASIH
             </h1>            
            
-        </div>
+        </div>  
         <div class="col-md-6">
             <div class="card">
                 <div class="card-header bg-light text-center">Login  Sistem</div>

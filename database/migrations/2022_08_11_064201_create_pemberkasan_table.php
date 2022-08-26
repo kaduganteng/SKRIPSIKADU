@@ -15,6 +15,7 @@ class CreatePemberkasanTable extends Migration
     {
         Schema::create('pemberkasan', function (Blueprint $table) {
             $table->id();
+            $table->integer('id_user');
             $table->string('kalender_pendidikan');
             $table->string('program_tahunan');
             $table->string('silabus');
@@ -29,6 +30,7 @@ class CreatePemberkasanTable extends Migration
             $table->string('program_bimbingankonseling');
             $table->string('buku_daftarkelas');
             $table->string('daftar_nilai');
+            $table->string('pointpemberkasan')->nullable()->default(0);
             $table->timestamps();
         });
     }

@@ -20,6 +20,7 @@ class CreateTableAbsensi extends Migration
             $table->date('tanggal_absen');
             $table->time('waktu_masuk');
             $table->time('waktu_keluar');
+            $table->string('pointabsen')->nullable()->default(0);
             $table->timestamps();
         });
     }

@@ -70,11 +70,30 @@
                         <p>Jadwal Kehadiran</p>
                     </a>
                 </li>
-                <li class="nav-item">
-                    <a href="{{ route('pemberkasan.index') }}" class="nav-link {{ $page == 'pemberkasan' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-calendar"></i>
-                        <p>Pemberkasan</p>
+                <li class="nav-item has-treeview {{ $page == 'pemberkasan' ? 'menu-open' : '' }}">
+                    <a href="#" class="nav-link {{ $page == 'pemberkasan' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-laptop"></i>
+                        <p>
+                            Pemberkasan
+                            <i class="right fas fa-angle-left"></i>
+                        </p>
                     </a>
+                    <ul class="nav nav-treeview">
+                        <li class="nav-item">
+                            <a href="{{ route('pemberkasan.index') }}" class="nav-link {{ $sub == 'position' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p>Admin</p>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="{{ route('pemberkasan.indexuser') }}" class="nav-link {{ $sub == 'departement' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p> User</p>
+                            </a>
+                        </li>
+                       
+                        
+                    </ul>
                 </li>
 
                 <li class="nav-item">
@@ -94,6 +113,13 @@
                         <a href="{{ route('absensi.index') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
                             <i class="nav-icon fas fa-tasks"></i>
                             <p>Absensi</p>
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a href="{{ route('quisioner.index') }}" class="nav-link {{ $page == 'quisioner' ? 'active' : '' }}">
+                            <i class="nav-icon fas fa-tasks"></i>
+                            <p>Quisioner</p>
                         </a>
                     </li>
                

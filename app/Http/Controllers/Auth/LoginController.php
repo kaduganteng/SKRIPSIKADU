@@ -52,7 +52,7 @@ class LoginController extends Controller
         $message = [
             'success'=> true,
             'alert-type' => 'success',
-            'message' => 'Selamat datang '.ucwords(Auth::user()->name).' di Sistem Informasi Pendataan dan Gaji Karyawan'
+            'message' => 'Selamat datang '.ucwords(Auth::user()->name).' di Sistem Pendukung Keputusan Penilaian Guru'
         ];
         return redirect()->route('home')->with($message);
     }

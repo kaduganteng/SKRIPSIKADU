@@ -1,59 +1,99 @@
-<div class="card-body">
-    <div class="card card-solid">
-        <div class="card-body pb-0 pt-3">
-            <blockquote>
-            <b>Keterangan!!</b><br>
-            <small><cite title="Source Title">Inputan Yang Ditanda Bintang Merah (<span class="text-danger">*</span>) Harus Di Isi !!</cite></small>
-            </blockquote>
+@extends('layouts.app')
+@section('styles')
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/select2@4.0.6-rc.1/dist/css/select2.min.css">
+@endsection
+@section('content')
+    <div class="content-wrapper pb-3">
+        <div class="content pb-5 pt-3">
+              <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                <h3 class="card-title back-top" style="margin-top: 5px;">
+                                    <a href="{{ route('pemberkasan.index') }}" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
+                                        <i class="fa fa-arrow-left fa-fw"></i></span>
+                                    </a>
+                                </h3>
+                                <div class="float-left offset-5 pt-1">
+                                    <span class="d-none d-md-block d-lg-block">INPUT PEMBERKASAN</span>
+                                </div>
+                                
+                            </div> 
+                            <div class="container-fluid row p-2" style="font-size: 14px;">
+                                <div class="col-md-9 p-0">
+                                    <table class="table no-border header-table mb-0" style="white-space: normal;">
+                                        <tr style="line-height: 1px;">
+                                            <td style="width: 100px;"></td>
+                                           
+                                           
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+                            <form action="{{route ('pemberkasan.store')}}" method="post" enctype="multipart/form-data">
+                                @csrf
+                            <div class="table-responsive">
+                                <div class="card-body p-0">
+                                    <table class="table table-bordered mb-0" style="font-size: 14px;">
+                                        <tbody>
+                                            <tr class="text-center bg-light" style="font-weight: bold;line-height: 1;">
+                                            <td  style="vertical-align : middle; white-space: normal; width:50px; text-align: center;">NO</td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">Nama Berkas</td>
+                                             
+                                                    <td style="vertical-align : middle;white-space:normal;
+                                                    width: auto;
+                                                    height: auto;
+                                                    word-wrap: break-word;">Berkas</td>
+                                           
+                                               
+                                            </tr>
+                                       
+                                       
+                                            <tr>
+                                                <td>
+                                                    1
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Kalender Pendidikan
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="kalender">
+                                                </td>
+                                              
+                                            </tr>
+                                            
+                                            <tr>
+                                                <td>
+                                                    2
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Program Tahunan
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="programtahunan">
+                                                </td>
+                                              
+                                            </tr>
+
+
+                                        
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            
+                            <div class="card-footer p-2">
+                                <button type="submit " class="btn btn-info   btn-sm">SUBMIT</button>
+                            </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
-    <div class="card-header with-border pl-0 pb-1">
-        <span class="col-form-label text-bold">CUTI STAFF</span>
-    </div>
-    <br> 
-    <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Staff <span class="text-danger">*</span></label> 
-        <div class="col-12 col-md-5 col-lg-5">
-          
-        
-           
-            @error('staff_id')
-                <span class="text-danger" role="alert">
-                    {{ $errors->first('staff_id') }}
-                </span>
-            @enderror
-        </div> 
-    </div>
 
-    <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Tgl. Cuti <span class="text-danger">*</span></label> 
-        <div class="col-12 col-md-5 col-lg-5">
-            @if (isset($cuti))
-                <input type="text" class="form-control pull-right datepicker" name="estimasi" value="{{ date('m/d/Y', strtotime($cuti->tgl_mulai)) . ' - ' . date('m/d/Y', strtotime($cuti->tgl_selesai)) }}" required autocomplete="off" onkeypress="return false">
-            @else
-                <input type="text" class="form-control pull-right datepicker" name="estimasi" value="{{ old('estimasi') }}" required autocomplete="off" onkeypress="return false">
-            @endif
-            @error('estimasi')
-                <span class="text-danger">{{ $errors->first('estimasi') }}</span>
-            @enderror
-        </div> 
-    </div>
+@endsection
 
-    <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Keterangan <span class="text-danger">*</span></label> 
-        <div class="col-12 col-md-5 col-lg-5">
-            <textarea name="keterangan" class="form-control @error('keterangan') is-invalid @enderror" placeholder="Alasan cuti..">{{ old('keterangan', $cuti->keterangan ?? '') }}</textarea>
-            @error('keterangan')
-                <span class="text-danger">{{ $errors->first('keterangan') }}</span>
-            @enderror
-        </div> 
-    </div>
-</div>
-<div class="card-footer">
-    <div class="offset-md-4">
-        <div class="form-group mb-0">
-            <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button> 
-            <button type="reset" class="btn btn-secondary"><i class="fas fa-undo mr-1"></i> Reset</button>
-        </div>
-    </div>
-</div>

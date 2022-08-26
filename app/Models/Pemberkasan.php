@@ -8,6 +8,7 @@ class Pemberkasan extends Model
 {
  protected $table = 'pemberkasan';
  protected $fillable = [
+    'id_user',
     'kalender_pendidikan',
     'program_tahunan',
     'silabus',
