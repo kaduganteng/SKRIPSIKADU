@@ -53,7 +53,7 @@
                                     <table class="table table-bordered mb-0" style="font-size: 14px;">
                                         <tbody>
                                             <tr class="text-center bg-light" style="font-weight: bold;line-height: 1;">
-                                                <td colspan="4" style="vertical-align : middle;width: 10px;">KEAHLIAN</td>
+                                                <td colspan="4" style="vertical-align : middle;width: 10px;">ABSENSI KEHADIRAN</td>
                                                 @if (count($attendance_date) > 0)
                                                     <td colspan="{{ count($attendance_date) }}" style="vertical-align : middle;white-space:normal;
                                                     width: auto;
@@ -65,8 +65,8 @@
                                             <tr class="text-center bg-light" style="line-height: 0.2;">
                                                 <td style="width:5px;">NO.</td>
                                                 <td>Nama</td>
-                                                <td>Status</td>
-                                                <td>Departement</td>
+                                                <td>Posisi</td>
+                                                <td>Jabatan</td>
                                                 
                                                 @foreach ($attendance_date as $d)
                                                     <td class="count_date_absen" style="width:20px; vertical-align: middle; text-align: center;">{{ date('d', strtotime($d->tanggal_absen)) }}</td>

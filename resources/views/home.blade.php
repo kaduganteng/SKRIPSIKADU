@@ -7,16 +7,7 @@
 					<div class="col-12">
 						<div class="row">
 							
-							<div class="col-md-4 col-sm-4 col-12">
-								<div class="info-box bg-success-gradient">
-									<span class="info-box-icon"><i class="fa fa-calendar"></i></span>
-		
-									<div class="info-box-content">
-										<span class="info-box-text">ini tarjadi jumlah yg udah input berkas</span>
-										<span class="info-box-number">{{ $schedule ?? 0 }}</span>
-									</div>
-								</div>
-							</div>
+							
 							<div class="col-md-4 col-sm-4 col-12">
 								<div class="info-box bg-secondary-gradient">
 									<span class="info-box-icon"><i class="fa fa-user-circle"></i></span>
@@ -32,15 +23,7 @@
 				<hr>
 				<div class="row">
 					<div class="col-md-10 offset-md-1">
-						<div class="col-md-5 col-sm-12 col-12 mb-3 float-left">
-							<div class="text-center">Ranking 3 Terbesar Guru Terbaik
-                            </div>
-							<canvas id="BarChartStaffDepartement" width="200" height="200"></canvas>
-						</div>
-						<div class="col-md-5 col-sm-12 col-12 mb-3 float-right">
-							<div class="text-center">Jumlah Staff berdasarkan Position</div>
-							<canvas id="BarChartStaffPosition" width="200" height="200"></canvas>
-						</div>
+						
 					</div>
 				</div>
 			</div>

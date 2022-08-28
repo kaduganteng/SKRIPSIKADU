@@ -13,7 +13,7 @@ class CreateQuisionerTable extends Migration
      */
     public function up()
     {
-        Schema::create('quisioner', function (Blueprint $table) {
+        Schema::create('tb_quisioner', function (Blueprint $table) {
             $table->id();
             $table->string('guru_id');
             $table->string('point1');
@@ -21,6 +21,7 @@ class CreateQuisionerTable extends Migration
             $table->string('point3');
             $table->string('point4');
             $table->string('point5');
+            $table->string('masukan');
             $table->timestamps();
         });
     }

@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Pemberkasan extends Model
 {
- protected $table = 'pemberkasan';
+ protected $table = 'tb_pemberkasan';
  protected $fillable = [
     'id_user',
     'kalender_pendidikan',

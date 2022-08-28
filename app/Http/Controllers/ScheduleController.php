@@ -18,7 +18,7 @@ class ScheduleController extends Controller
 
     public function create()
     {
-        $data['title'] = "Buat Jadwal";
+        $data['title'] = "Buat Jadwaludah";
         $data['staff'] = Staff::all();
         $value = new Keterangan();
         $data['ket_schedule'] = $value->ket_schedule;

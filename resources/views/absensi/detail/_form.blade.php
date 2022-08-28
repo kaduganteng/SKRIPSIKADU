@@ -2,7 +2,7 @@
         
     @if ($staff ?? '')
         <div class="alert alert-warning text-justify">
-            <strong>Warning !!</strong> Data staff belum ada, anda tidak dapat melakukan absensi. Silahkan input data staff terlebih dulu 
+            <strong>Warning !!</strong> Data Guru belum ada, anda tidak dapat melakukan absensi. Silahkan input data guru terlebih dulu 
             <a class="float-right" href="{{ route('staff.create') }}" data-toggle="tooltip" title="Silahkan klik untuk menginput data pekerja" style="text-decoration-color: blue;">
                 <span class="text-primary">Input Sekarang ?</span>  
             </a>
@@ -33,7 +33,7 @@
                             <td>Status</td>
                             <td>Tgl. Masuk</td>
                             <td>Ket. Schedule</td>
-                            <td class="text-center" style="min-width: 150px;">Attendance</td>
+                            <td class="text-center" style="min-width: 150px;">Keterangan</td>
                         </tr>
                     </thead>
                     <tbody>

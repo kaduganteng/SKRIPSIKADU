@@ -13,7 +13,7 @@ class CreatePemberkasanTable extends Migration
      */
     public function up()
     {
-        Schema::create('pemberkasan', function (Blueprint $table) {
+        Schema::create('tb_pemberkasan', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
             $table->string('kalender_pendidikan');

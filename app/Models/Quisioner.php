@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Quisioner extends Model
 {
-    protected $table = 'quisioner';
+    protected $table = 'tb_quisioner';
     protected $fillable = [
         'guru_id',
         'point1',
