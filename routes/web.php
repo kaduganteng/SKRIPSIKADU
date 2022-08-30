@@ -110,6 +110,7 @@ Route::middleware('auth')->group(function(){
             Route::patch('schedule/{schedule}/update', 'ScheduleController@update')->name('schedule.update');
             Route::get('schedule/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
             Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
+            Route::get('pemberkasan/detail', 'PemberkasanController@detail')->name('pemberkasan.detail');
         });
 
     });
@@ -118,11 +119,11 @@ Route::middleware('auth')->group(function(){
     Route::get('quisioner/create', 'QuisionerController@create')->name('quisioner.create');
     Route::post('quisioner/store', 'QuisionerController@store')->name('quisioner.store');
     //pemberkasan
-    Route::get('pemberkasan/indexuser', 'PemberkasanController@indexuser')->name('pemberkasan.indexuser');
-    Route::get('pemberkasan/create', 'PemberkasanController@create')->name('pemberkasan.create');
-    Route::post('pemberkasan/store', 'PemberkasanController@store')->name('pemberkasan.store');
-    Route::get('pemberkasan/{pemberkasan}/edit', 'PemberkasanController@edit')->name('pemberkasan.edit');
-    Route::patch('pemberkasan/{pemberkasan}/update', 'PemberkasanController@update')->name('pemberkasan.update');
+    Route::get('pemberkasanuser/index', 'PemberkasanUserController@index')->name('pemberkasanuser.index');
+    Route::get('pemberkasanuser/create', 'PemberkasanUserController@create')->name('pemberkasanuser.create');
+    Route::post('pemberkasanuser/store', 'PemberkasanUserController@store')->name('pemberkasanuser.store');
+    Route::get('pemberkasanuser/{pemberkasanuser}/edit', 'PemberkasanUserController@edit')->name('pemberkasanuser.edit');
+    Route::patch('pemberkasanuser/{pemberkasanuser}/update', 'PemberkasanUserController@update')->name('pemberkasanuser.update');
 
 
     Route::get('schedule', 'ScheduleController@index')->name('schedule.index');

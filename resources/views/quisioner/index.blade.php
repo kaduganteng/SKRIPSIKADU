@@ -17,8 +17,8 @@
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
                         <a href="{{ route('quisioner.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
-                            <i class="fa fa-search"></i> Lihat Form Quisioner
-                        </a>
+                                <i class="fa fa-search"></i> Lihat Form Quisioner
+                            </a>
                     </div>
                 </form>
             </div>
@@ -30,14 +30,34 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Quisioner
-                                
+                                DATA QUISIONER
                             </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-4"> 
+                                        <label>Fitler Data</label>
+                                        <select  id="filter-nama" class="form-control filter ">
+                                        <option value="">Pilih Nama</option>
+                                        @foreach($staff as $s)
+                                        <option value="{{$s->id}}">{{$s->name}}</option>
+                                        @endforeach
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="divider"></div>
+                            
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama</th> 
+                                        <th>Point</th>
+                                        <th>Point</th>
+                                        <th>Point</th>
+                                        <th>Point</th>
+                                        <th>Point</th>
+                                        <th>Masukan</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
@@ -54,12 +74,14 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>{{ $item->guru_id ?? '' }}</td> 
+                                            <td>{{$item->staff->name ?? '' }}</td> 
                                             <td>{{$item->point1 ?? '' }}</td>
                                             <td>{{$item->point2 ?? '' }}</td>
                                             <td>{{$item->point3 ?? '' }}</td>
                                             <td>{{$item->point4 ?? '' }}</td>
                                             <td>{{$item->point5 ?? '' }}</td>
+                                            <td>{{$item->masukan ?? '' }}</td>
+
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -114,5 +136,10 @@
                 }
             });
         }
+
+        $(".filter").on('change',function(){
+            let quisioner = $9
+
+        })
     </script>
 @endsection

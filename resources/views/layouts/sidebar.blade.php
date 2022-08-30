@@ -76,7 +76,13 @@
                             <i class="nav-icon fas fa-tasks"></i>
                             <p>Data Absensi</p>
                         </a>
-                        </li>   
+                        </li>
+                        <li class="nav-item">
+                    <a href="{{ route('cuti.index') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
+                        <i class="nav-icon fa fa-calendar"></i>
+                        <p>Permohonan Cuti</p>
+                    </a>
+                </li>   
                     </ul>
                 </li>
                
@@ -91,7 +97,7 @@
                
                 <li class="nav-item has-treeview {{ $page == 'pemberkasan' ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ $page == 'pemberkasan' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-laptop"></i>
+                        <i class="nav-icon fa fa-file"></i>
                         <p>
                             Pemberkasan
                             <i class="right fas fa-angle-left"></i>
@@ -99,13 +105,13 @@
                     </a>
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
-                            <a href="{{ route('pemberkasan.index') }}" class="nav-link {{ $sub == 'position' ? 'active' : '' }}">
+                            <a href="{{ route('pemberkasan.index') }}" class="nav-link {{ $sub == 'pemberkasan' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Admin</p>
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a href="{{ route('pemberkasan.indexuser') }}" class="nav-link {{ $sub == 'departement' ? 'active' : '' }}">
+                            <a href="{{ route('pemberkasanuser.index') }}" class="nav-link {{ $sub == 'pemberkasanuser' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p> User</p>
                             </a>
@@ -115,19 +121,9 @@
                     </ul>
                 </li>
 
-                <li class="nav-item">
-                    <a href="{{ route('cuti.index') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-calendar"></i>
-                        <p>Permohonan Cuti</p>
-                    </a>
-                </li>
+               
                 @if (Auth::user()->hasRole('admin'))
-                    <li class="nav-item">
-                        <a href="{{ route('salary.index') }}" class="nav-link {{ $page == 'salary' ? 'active' : '' }}">
-                            <i class="nav-icon fa fa-money"></i>
-                            <p>Gaji</p>
-                        </a>
-                    </li>
+                   
                    
 
                     <li class="nav-item">

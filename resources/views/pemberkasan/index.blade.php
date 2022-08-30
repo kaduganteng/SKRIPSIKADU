@@ -1,9 +1,7 @@
 @extends('layouts.app')
-
 @section('styles')
     <link rel="stylesheet" href="{{ asset ('css/sweetalert.css') }}">
 @endsection
-
 @section('content')
     <div class="content-wrapper pb-3">
         <div class="content-header">
@@ -29,28 +27,37 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Pemberkasan Guru
-                                <span class="badge badge-danger float-right float-xl-right mt-1"></span>
+                                Data Pemberkasan
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
-                                    <th>Nama Guru</th>
-                                    <th style="width:100px;">Details</th> 
+                                        <th class="text-center" style="width: 100px;">#</th> 
+                                        <th>Nama Guru</th>
+                                        <th class="text-right">Detail</th>
                                     </tr>
                                 </thead> 
-
-                                <tr>
-                                    <td>
-                                        hura
-                                    </td>
-                                    <td>
-                                    <a href="{{ route('pemberkasan.indexuser', $pemberkasan[0]->id_user) }}" class="btn btn-sm btn-info">Detail berkas</a> 
-                                    </td>
-                                </tr>
                                 <tbody>
-                                
-                                      
+                                    @foreach ($pemberkasan as $item)
+                                        <tr id="hide{{ $item->id }}">
+                                            <td class="text-center">
+                                                <a href="#" class="text-secondary nav-link p-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                    <i class="fas fa-ellipsis-v"></i>
+                                                </a>
+                                                <div class="dropdown-menu dropdown-menu-right">
+                                                    {{-- 
+                                                    <div class="dropdown-divider"></div> --}}
+                                                    <a class="dropdown-item" href="javascript:void(0)" onClick="hapus({{$item->id}})">
+                                                        <i class="far fa-trash-alt mr-2"></i> Hapus
+                                                    </a>
+                                                </div>
+                                            </td>
+                                            <td>{{ $item->staff->name ?? '' }}</td> 
+                                           <td class="text-right">
+                                                <a href="{{ route('pemberkasan.detail', $item->staff_id) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
+                                            </td> 
+                                        </tr>
+                                    @endforeach
                                 </tbody>
                             </table>
                         </div>
@@ -60,7 +67,7 @@
         </div>
     </div>
 
-    <a href="{{ route('absensi.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
+    <a href="{{ route('salary.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
         <span><i class="fas fa-plus fa-sm align-middle"></i></span>
     </a>
 
@@ -88,12 +95,13 @@
             function(isConfirm){
                 if (isConfirm) {
                     $.ajax({
-                        url:"{{URL::to('/master/tenaga_kerja/destroy')}}",
+                        url:"{{URL::to('/salary/destroy')}}",
                         data:"id=" + id ,
-                        success: function(html)
+                        success: function(data)
                         {
-                            swal("Deleted", "Data Berhasil Di Hapus.", "success");
-                            $("#hide"+id).hide(300);   
+                            swal("Deleted", data.message, "success");
+                            $("#count").html(data.count);
+                            $("#hide"+id).hide(300);
                         }
                     });
                     
@@ -104,4 +112,3 @@
         }
     </script>
 @endsection
-

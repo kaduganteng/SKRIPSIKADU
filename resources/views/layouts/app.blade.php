@@ -18,6 +18,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <style type="text/css">
+        .divider{
+width : 100%;
+height: 1px;
+background: #BBB;
+margin: 1 rem 0;
+
+        }
+    </style>
 </head>
 <body class="hold-transition @guest login-page login-bg @else skin-blue sidebar-mini @endguest">
     <div id="load">Loading..</div>

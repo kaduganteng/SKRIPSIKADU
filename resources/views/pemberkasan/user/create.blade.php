@@ -18,14 +18,14 @@
                                     <h3 class="card-title">{{ $title }}</h3>
                                 </div>
                                 <div class="back-top">
-                                <a href="{{ route('pemberkasan.index') }}" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
+                                <a href="{{ route('pemberkasanuser.index') }}" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
                                     <i class="fa fa-arrow-left fa-fw"></i></span>
                                 </a>
                             </div>
                             </div> 
-                            <form action="{{ route('pemberkasan.store') }}" method="POST" class="form-horizontal">
+                            <form action="{{ route('pemberkasanuser.store') }}" method="POST" class="form-horizontal">
                                 @csrf
-                                @include('pemberkasan._form')
+                                @include('pemberkasan.user._form')
                             </form>
                             <div id="loading"></div>
                         </div>

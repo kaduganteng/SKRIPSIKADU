@@ -15,6 +15,8 @@ class CreateQuisionerTable extends Migration
     {
         Schema::create('tb_quisioner', function (Blueprint $table) {
             $table->id();
+            $table->string('semester');
+            $table->date('tgl_isi');
             $table->string('guru_id');
             $table->string('point1');
             $table->string('point2');

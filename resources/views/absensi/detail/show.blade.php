@@ -22,8 +22,8 @@
                                     <form action="{{ url()->current() }}">
                                         <div class="input-group">
                                             <select name="filter" class="form-control input-sm select2">
-                                                <option value="">Tampilkan semua</option>
-                                                @if (!empty($filter))
+                                                <option value="">Tampilkan Semua</option>
+                                                @if (!empty($filter))   
                                                     <option value="all">SHOW ALL</option>
                                                 @endif
                                                 @foreach ($departement as $item)

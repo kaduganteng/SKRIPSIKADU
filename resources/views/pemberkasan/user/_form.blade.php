@@ -11,16 +11,13 @@
                         <div class="card">
                             <div class="card-header bg-light">
                                 <h3 class="card-title back-top" style="margin-top: 5px;">
-                                    <a href="{{ route('pemberkasan.index') }}" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
+                                    <a href="{{ route('pemberkasanuser.index') }}" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
                                         <i class="fa fa-arrow-left fa-fw"></i></span>
                                     </a>
                                 </h3>
                                 <div class="float-left offset-5 pt-1">
-                                    <span class="d-none d-md-block d-lg-block">PEMBERKASAN</span>
+                                    <span class="d-none d-md-block d-lg-block">INPUT PEMBERKASAN</span>
                                 </div>
-                                <a href="{{ route('pemberkasan.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
-                            <i class="fas fa-plus fa-sm fa-fw"></i> Input Berkas
-                        </a>
                                 
                             </div> 
                             <div class="container-fluid row p-2" style="font-size: 14px;">
@@ -34,7 +31,7 @@
                                     </table>
                                 </div>
                             </div>
-                            <form action="{{route ('pemberkasan.store')}}" method="post" enctype="multipart/form-data">
+                            <form action="{{route ('pemberkasanuser.store')}}" method="post" enctype="multipart/form-data">
                                 @csrf
                             <div class="table-responsive">
                                 <div class="card-body p-0">
@@ -43,10 +40,15 @@
                                             <tr class="text-center bg-light" style="font-weight: bold;line-height: 1;">
                                             <td  style="vertical-align : middle; white-space: normal; width:50px; text-align: center;">NO</td>
                                                 <td colspan="6"style="vertical-align : middle;width: 10px;">Nama Berkas</td>
-                                                <td style="vertical-align : middle;white-space:normal;width: auto; height: auto;word-wrap: break-word;">Berkas</td>
-                                                <td>Opsi</td>
+                                             
+                                                    <td style="vertical-align : middle;white-space:normal;
+                                                    width: auto;
+                                                    height: auto;
+                                                    word-wrap: break-word;">Berkas</td>
+                                           
                                                
                                             </tr>
+                                       
                                        
                                             <tr>
                                                 <td>
@@ -56,28 +58,22 @@
                                                     Kalender Pendidikan
                                                 </td>
                                                 <td>
-                                                    {{$pemberkasan[0]->kalender_pendidikan}}
+                                                    <input type="file" name="kalender">
                                                 </td>
-                                              <td>
-                                                    <button type="submit " class="btn btn-info   btn-sm">edit</button>
-                                                    <button type="submit " class="btn btn-danger   btn-sm">delete</button>
-                                              </td>
+                                              
                                             </tr>
-
+                                            
                                             <tr>
                                                 <td>
-                                                    1
+                                                    2
                                                 </td>
                                                 <td colspan="6"style="vertical-align : middle;width: 10px;">
-                                                   Program Tahunan
+                                                    Program Tahunan
                                                 </td>
                                                 <td>
-                                                    {{$pemberkasan[0]->program_tahunan}}
+                                                    <input type="file" name="programtahunan">
                                                 </td>
-                                              <td>
-                                                    <button type="submit " class="btn btn-info   btn-sm">edit</button>
-                                                    <button type="submit " class="btn btn-danger   btn-sm">delete</button>
-                                              </td>
+                                              
                                             </tr>
 
 
@@ -88,7 +84,9 @@
                             </div>
 
                             
-                           
+                            <div class="card-footer p-2">
+                                <button type="submit " class="btn btn-info   btn-sm">SUBMIT</button>
+                            </div>
                             </form>
                         </div>
                     </div>

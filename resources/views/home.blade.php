@@ -6,8 +6,6 @@
 				<div class="row">
 					<div class="col-12">
 						<div class="row">
-							
-							
 							<div class="col-md-4 col-sm-4 col-12">
 								<div class="info-box bg-secondary-gradient">
 									<span class="info-box-icon"><i class="fa fa-user-circle"></i></span>
@@ -20,10 +18,29 @@
 						</div>
 					</div>
 				</div>
+                
 				<hr>
 				<div class="row">
 					<div class="col-md-10 offset-md-1">
-						
+                    <div class="table-responsive">
+                                <div class="card-body p-0">
+                                    <div class="card-header bg-light"> 
+                                        <div class="float-left offset-5 pt-1">
+                                            <span class="d-none d-md-block d-lg-block">PERANGKINGAN</span>
+                                        </div>
+                                    </div> 
+                                    <table class="table table-bordered mb-0" style="font-size: 14px;">
+                                        <tbody>
+                                            <tr class="text-center bg-light" style="font-weight: bold;line-height: 1;">
+                                            <td  style="vertical-align : middle; white-space: normal; width:50px; text-align: center;">NO</td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">Nama Guru</td>
+                                                <td style="vertical-align : middle;white-space:normal;width: auto; height: auto;word-wrap: break-word;">Jabatan</td>
+                                                <td>Total Point</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
 					</div>
 				</div>
 			</div>
