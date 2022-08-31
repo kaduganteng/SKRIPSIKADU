@@ -16,6 +16,7 @@ class CreatePemberkasanTable extends Migration
         Schema::create('tb_pemberkasan', function (Blueprint $table) {
             $table->id();
             $table->integer('id_user');
+            $table->string('jabatan');
             $table->string('kalender_pendidikan');
             $table->string('program_tahunan');
             $table->string('silabus');

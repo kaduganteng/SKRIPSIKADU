@@ -26,7 +26,7 @@
                                                 @if (!empty($filter))
                                                     <option value="all">SHOW ALL</option>
                                                 @endif
-                                                @foreach ($periode as $item)
+                                                @foreach ($periode zas $item)
                                                     <option value="{{ $item->periode }}" {{ $item->periode == old('filter', $filter) ? 'selected':'' }}>{{ strtoupper($item->periode) }}</option>
                                                 @endforeach
                                             </select>

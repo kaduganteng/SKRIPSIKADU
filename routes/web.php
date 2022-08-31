@@ -110,7 +110,9 @@ Route::middleware('auth')->group(function(){
             Route::patch('schedule/{schedule}/update', 'ScheduleController@update')->name('schedule.update');
             Route::get('schedule/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
             Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
-            Route::get('pemberkasan/detail', 'PemberkasanController@detail')->name('pemberkasan.detail');
+            Route::get('pemberkasan/detail{id}', 'PemberkasanController@detail')->name('pemberkasan.detail');
+            Route::get('pemberkasan/{id}', 'PemberkasanController@destroy')->name('pemberkasan.destroy');
+
         });
 
     });

@@ -182,27 +182,27 @@ class SalaryController extends Controller
 
     public function show($id, Request $request)
     {
-        // filter berdasarkan departement
-        $f = $request->filter ?? null;
+            // filter berdasarkan departement
+            $f = $request->filter ?? null;
 
-        $data['title'] = "Detail Penggajian";
-        $data['staff'] = Staff::find($id);
-        if($f == '' || $f == 'all')
-        {
-            $data['salary'] = Salary::where('staff_id', $id)->get();
-        }
-        else
-        {
-            $data['salary'] = Salary::where('staff_id', $id)
-                                    ->where('periode', $f)
-                                    ->get();
-        }
-        $data['periode'] = Salary::groupBy( 'periode' )
-                ->orderBy( 'periode' )
-                ->select(DB::raw('count(*) as count, periode'))
-                ->get();
-        $data['filter'] = $f;
-        return view('salary.show', $data);      
+            $data['title'] = "Detail Penggajian";
+            $data['staff'] = Staff::find($id);
+            if($f == '' || $f == 'all')
+            {
+                $data['salary'] = Salary::where('staff_id', $id)->get();
+            }
+            else
+            {
+                $data['salary'] = Salary::where('staff_id', $id)
+                                        ->where('periode', $f)
+                                        ->get();
+            }
+            $data['periode'] = Salary::groupBy( 'periode' )
+                    ->orderBy( 'periode' )
+                    ->select(DB::raw('count(*) as count, periode'))
+                    ->get();
+            $data['filter'] = $f;
+            return view('salary.show', $data);      
     }
 
     public function excel($id, $filter)

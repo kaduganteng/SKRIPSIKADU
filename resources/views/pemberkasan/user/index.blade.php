@@ -9,11 +9,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="card">
-                            <div class="card-header bg-light"> 
-                                <div class="float-left offset-5 pt-1">
-                                    <span class="d-none d-md-block d-lg-block">PEMBERKASAN</span>
-                                </div>
-                            </div> 
+                                <div class="card-header bg-light"> 
+                                    <div class="float-left offset-5 pt-1">
+                                        <span class="d-none d-md-block d-lg-block">PEMBERKASAN</span>
+                                    </div>
+                                </div> 
                             <div class="container-fluid row p-2" style="font-size: 14px;">
                                 <div class="col-md-9 p-0">
                                     <table class="table no-border header-table mb-0" style="white-space: normal;">
@@ -28,7 +28,7 @@
                                     <tr style="line-height: 1px;">
                                         <td width="100">Jabatan</td>
                                         <td width="10" class="text-center">:</td>
-                                        <td>{{ $staff[0]->position->status }}</td>
+                                        <td>{{ $staff[0]->position_id }}</td>
                                     </tr>
                                     </table>
                                 
@@ -50,10 +50,9 @@
                                             <td  style="vertical-align : middle; white-space: normal; width:50px; text-align: center;">NO</td>
                                                 <td colspan="6"style="vertical-align : middle;width: 10px;">Nama Berkas</td>
                                                 <td style="vertical-align : middle;white-space:normal;width: auto; height: auto;word-wrap: break-word;">Berkas</td>
-                                                <td>Opsi</td>
                                                
                                             </tr>
-                                       
+                                       @forelse ($pemberkasan as $item)
                                             <tr>
                                                 <td>
                                                     1
@@ -62,12 +61,11 @@
                                                     Kalender Pendidikan
                                                 </td>
                                                 <td>
-                                                    {{$pemberkasan[0]->kalender_pendidikan}}
+                                                <a href="{{ asset('upload/' . $pemberkasan[0]->kalender_pendidikan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan[0]->kalender_pendidikan}}
+                                                </a>
                                                 </td>
-                                              <td>
-                                                    <button type="submit " class="btn btn-info   btn-sm">edit</button>
-                                                    <button type="submit " class="btn btn-danger   btn-sm">delete</button>
-                                              </td>
+                                              
                                             </tr>
 
                                             <tr>
@@ -78,13 +76,19 @@
                                                    Program Tahunan
                                                 </td>
                                                 <td>
-                                                    {{$pemberkasan[0]->program_tahunan}}
+                                                <a href="{{ asset('upload/' . $pemberkasan[0]->program_tahunan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan[0]->program_tahunan}}
+                                                </a>
                                                 </td>
-                                              <td>
-                                                    <button type="submit " class="btn btn-info   btn-sm">edit</button>
-                                                    <button type="submit " class="btn btn-danger   btn-sm">delete</button>
-                                              </td>
+                                             
                                             </tr>
+
+                                        @empty
+                                        <tr>
+                                                    <td class="text-center" colspan="9">Tidak ada data untuk ditampilkan</td>
+                                                </tr>
+
+                                        @endforelse
 
 
                                         

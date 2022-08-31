@@ -9,6 +9,7 @@ class Pemberkasan extends Model
  protected $table = 'tb_pemberkasan';
  protected $fillable = [
     'id_user',
+    'pemberkasan',
     'kalender_pendidikan',
     'program_tahunan',
     'silabus',

@@ -8,9 +8,8 @@ class Quisioner extends Model
 {
     protected $table = 'tb_quisioner';
     protected $fillable = [
-        'semester',
-        'tgl_isi',
         'guru_id',
+        'posisi_id',
         'point1',
         'point2',
         'point3',

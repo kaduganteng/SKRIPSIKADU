@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead> 
                                 <tbody>
-                                    @foreach ($pemberkasan as $item)
+                                    @forelse ($staff as $item)
                                         <tr id="hide{{ $item->id }}">
                                             <td class="text-center">
                                                 <a href="#" class="text-secondary nav-link p-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -52,12 +52,16 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>{{ $item->staff->name ?? '' }}</td> 
-                                           <td class="text-right">
-                                                <a href="{{ route('pemberkasan.detail', $item->staff_id) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
+                                            <td>{{ $item->name ?? '' }}</td> 
+                                            <td class="text-right">
+                                                <a href="{{ route('pemberkasan.detail', $item->id) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
                                             </td> 
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                                <tr>
+                                                    <td class="text-center" colspan="9">Tidak ada data untuk ditampilkan</td>
+                                                </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>

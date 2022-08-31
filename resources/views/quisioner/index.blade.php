@@ -34,15 +34,16 @@
                             </div>
                             <div class="card-body">
                                 <div class="row">
-                                    <div class="col-md-4"> 
-                                        <label>Fitler Data</label>
-                                        <select  id="filter-nama" class="form-control filter ">
-                                        <option value="">Pilih Nama</option>
-                                        @foreach($staff as $s)
-                                        <option value="{{$s->id}}">{{$s->name}}</option>
-                                        @endforeach
-                                        </select>
-                                    </div>
+                                    <form action="{{ url()->current() }}">
+                                        <div class="input-group">
+                                            <select name="filter" class="form-control input-sm select2">
+                                                <option value="all">Tampilkan semua</option>
+                                            </select>
+                                            <div class="input-group-append">
+                                                <button type="submit" class="btn btn-secondary btn-sm">Filter</button>
+                                            </div>
+                                        </div>
+                                    </form>
                                 </div>
                             </div>
                             <div class="divider"></div>
@@ -74,14 +75,13 @@
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>{{$item->staff->name ?? '' }}</td> 
+                                            <td>{{$item->guru_id ?? '' }}</td> 
                                             <td>{{$item->point1 ?? '' }}</td>
                                             <td>{{$item->point2 ?? '' }}</td>
                                             <td>{{$item->point3 ?? '' }}</td>
                                             <td>{{$item->point4 ?? '' }}</td>
                                             <td>{{$item->point5 ?? '' }}</td>
                                             <td>{{$item->masukan ?? '' }}</td>
-
                                         </tr>
                                     @endforeach
                                 </tbody>
@@ -138,8 +138,7 @@
         }
 
         $(".filter").on('change',function(){
-            let quisioner = $9
-
+            console.log("Filter")
         })
     </script>
 @endsection
