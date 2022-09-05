@@ -76,6 +76,140 @@
                                               
                                             </tr>
 
+                                            <tr>
+                                                <td>
+                                                    3
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Silabus
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="silabus">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    4
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    KKM
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="kkm">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    5
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Jadwal Pembelajaran
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="jadwalpembelajaran">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    6
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Rencana Pembelajaran
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="rencanapembelajaran">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    7
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Agenda Kegiatan
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="agendakegiatan">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    8
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Program Evaluasi
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="programevaluasi">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    9
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Program Analisi
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="programanalisis">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    10
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Program Perbaikan
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="programperbaikan">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    11
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Tugas Struktur dan Tidak
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="tugasstrukturdantidak">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    12
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Program Bimbingan Konseling
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="programbimbingankonseling">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    13
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Buku Daftar Kelas
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="bukudaftarkelas">
+                                                </td>
+                                              
+                                            </tr> <tr>
+                                                <td>
+                                                    14
+                                                </td>
+                                                <td colspan="6"style="vertical-align : middle;width: 10px;">
+                                                    Daftar Nilai
+                                                </td>
+                                                <td>
+                                                    <input type="file" name="daftarnilai">
+                                                </td>
+                                              
+                                            </tr>
+
 
                                         
                                         </tbody>

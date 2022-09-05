@@ -15,7 +15,8 @@ class Quisioner extends Model
         'point3',
         'point4',
         'point5',
-        'masukan'
+        'masukan',
+        'totalpoint'
         
     ];
 }

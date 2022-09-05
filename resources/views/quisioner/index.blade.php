@@ -16,9 +16,6 @@
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
-                        <a href="{{ route('quisioner.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
-                                <i class="fa fa-search"></i> Lihat Form Quisioner
-                            </a>
                     </div>
                 </form>
             </div>
@@ -32,58 +29,39 @@
                             <div class="card-header bg-light">
                                 DATA QUISIONER
                             </div>
-                            <div class="card-body">
-                                <div class="row">
-                                    <form action="{{ url()->current() }}">
-                                        <div class="input-group">
-                                            <select name="filter" class="form-control input-sm select2">
-                                                <option value="all">Tampilkan semua</option>
-                                            </select>
-                                            <div class="input-group-append">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Filter</button>
-                                            </div>
-                                        </div>
-                                    </form>
-                                </div>
-                            </div>
-                            <div class="divider"></div>
-                            
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
-                                        <th>Nama</th> 
-                                        <th>Point</th>
-                                        <th>Point</th>
-                                        <th>Point</th>
-                                        <th>Point</th>
-                                        <th>Point</th>
-                                        <th>Masukan</th>
+                                        <th>Nama Guru</th>
+                                        <th class="text-right">Detail</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
-                                    @foreach ($quisioner as $item)
+                                    @forelse ($quisioner as $item)
                                         <tr id="hide{{ $item->id }}">
                                             <td class="text-center">
                                                 <a href="#" class="text-secondary nav-link p-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                                     <i class="fas fa-ellipsis-v"></i>
                                                 </a>
                                                 <div class="dropdown-menu dropdown-menu-right">
-                                                    <div class="dropdown-divider"></div>
+                                                    {{-- 
+                                                    <div class="dropdown-divider"></div> --}}
                                                     <a class="dropdown-item" href="javascript:void(0)" onClick="hapus({{$item->id}})">
                                                         <i class="far fa-trash-alt mr-2"></i> Hapus
                                                     </a>
                                                 </div>
                                             </td>
-                                            <td>{{$item->guru_id ?? '' }}</td> 
-                                            <td>{{$item->point1 ?? '' }}</td>
-                                            <td>{{$item->point2 ?? '' }}</td>
-                                            <td>{{$item->point3 ?? '' }}</td>
-                                            <td>{{$item->point4 ?? '' }}</td>
-                                            <td>{{$item->point5 ?? '' }}</td>
-                                            <td>{{$item->masukan ?? '' }}</td>
+                                            <td>{{ $item->name ?? '' }}</td> 
+                                            <td class="text-right">
+                                                <a href="{{ route('quisioner.detail', $item->id) }}" class="btn btn-sm btn-info">Hasil Quisioner</a>    
+                                            </td> 
                                         </tr>
-                                    @endforeach
+                                    @empty
+                                                <tr>
+                                                    <td class="text-center" colspan="9">Tidak ada data untuk ditampilkan</td>
+                                                </tr>
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
@@ -93,8 +71,8 @@
         </div>
     </div>
 
-    <a href="{{ route('master.departement.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
-        <span><i class="fas fa-user-plus fa-sm align-middle"></i></span>
+    <a href="{{ route('salary.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
+        <span><i class="fas fa-plus fa-sm align-middle"></i></span>
     </a>
 
 @endsection
@@ -121,7 +99,7 @@
             function(isConfirm){
                 if (isConfirm) {
                     $.ajax({
-                        url:"{{URL::to('/master/departement/destroy')}}",
+                        url:"{{URL::to('/salary/destroy')}}",
                         data:"id=" + id ,
                         success: function(data)
                         {
@@ -136,9 +114,5 @@
                 }
             });
         }
-
-        $(".filter").on('change',function(){
-            console.log("Filter")
-        })
     </script>
 @endsection

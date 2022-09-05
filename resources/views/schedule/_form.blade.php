@@ -28,17 +28,7 @@
         </div> 
     </div>
 
-    <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Tgl. Masuk <span class="text-danger">*</span></label> 
-        <div class="col-12 col-md-5 col-lg-5">
-            <input type="date" name="tgl_masuk" class="form-control @error('tgl_masuk') is-invalid @enderror" value="{{ old('tgl_masuk', $schedule->tgl_masuk ?? '') }}" autocomplete="off">
-            @error('tgl_masuk')
-                <span class="invalid-feedback" role="alert">
-                    <strong>{{ $errors->first('tgl_masuk') }}</strong>
-                </span>
-            @enderror
-        </div> 
-    </div>
+   
 
     <div class="form-group row">
         <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Ket. Jawdal<span class="text-danger">*</span></label> 

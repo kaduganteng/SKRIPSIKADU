@@ -18,7 +18,7 @@ class ScheduleController extends Controller
 
     public function create()
     {
-        $data['title'] = "Buat Jadwaludah";
+        $data['title'] = "Buat Jadwal";
         $data['staff'] = Staff::all();
         $value = new Keterangan();
         $data['ket_schedule'] = $value->ket_schedule;
@@ -30,8 +30,7 @@ class ScheduleController extends Controller
     {   
         $request->validate([
             'staff_id'=>'required|unique:tb_schedule',
-            'tgl_masuk'=>'required|date',
-            'ket_schedule'=>'required',
+            'ket_schedule'=>'required'
             // 'status'=>'required',
         ]);
 
@@ -39,7 +38,7 @@ class ScheduleController extends Controller
 
         $message = [
             'alert-type'=>'success',
-            'message'=> 'Data schedule created successfully'
+            'message'=> 'Jadwal berhasil ditambahkan'
         ];  
         return redirect()->route('schedule.index')->with($message);
     }
@@ -59,8 +58,7 @@ class ScheduleController extends Controller
     {
         $request->validate([
             'staff_id'=>'required',
-            'tgl_masuk'=>'required|date',
-            'ket_schedule'=>'required',
+            'ket_schedule'=>'required'
             // 'status'=>'required',
         ]);
 
@@ -68,7 +66,7 @@ class ScheduleController extends Controller
 
         $message = [
             'alert-type'=>'success',
-            'message'=> 'Data schedule updated successfully'
+            'message'=> 'Jadwal berhasil diupdate'
         ];  
         return redirect()->route('schedule.index')->with($message);
     }
@@ -87,7 +85,7 @@ class ScheduleController extends Controller
             $message = [
                 'alert-type' => 'success',
                 'count' => $count,
-                'message' => 'Data schedule deleted successfully.'
+                'message' => 'Jadwal berhasil dihapus.'
             ];
             return response()->json($message);
         }

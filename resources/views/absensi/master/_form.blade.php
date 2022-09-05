@@ -44,7 +44,7 @@
                     <div class="input-group-prepend">
                         <span class="input-group-text bg-white"><i class="fas fa-calendar"></i></span>
                     </div>
-                    <input type="text" class="form-control pull-right datepicker{{ $errors->has('tanggal') ? ' is-invalid' : '' }}" name="tanggal" placeholder="31/04/2019" autocomplete="off" required onkeypress="return false" />
+                    <input type="text" class="form-control pull-right datepicker{{ $errors->has('tanggal') ? ' is-invalid' : '' }}" name="tanggal" placeholder="1/08/2022" autocomplete="off" required onkeypress="return false" />
                 </div>
                 @if ($errors->has('tanggal'))
                     <span class="invalid-feedback" role="alert">

@@ -6,7 +6,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>Admin - SDN MARGAASIH</title>
-    <link rel="icon" href="{{ asset('img/logo.jpeg') }}">
+    <link rel="icon" href="{{ asset('img/as.png') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.3.1/css/bootstrap.min.css" />
     @yield('styles')
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/admin-lte@3.0.0-alpha/dist/css/adminlte.min.css">

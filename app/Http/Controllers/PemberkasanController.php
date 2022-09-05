@@ -15,12 +15,9 @@ class PemberkasanController extends Controller
     public function index()
 
     {   
-        $staff = Staff::all();
-        $pemberkasan= Pemberkasan::all();
+        $pemberkasan= Pemberkasan::join('tb_staff','tb_staff.id','=','tb_pemberkasan.id_user')->get();
         return view ('pemberkasan.index',[
-            'pemberkasan'=> $pemberkasan,
-            'staff'=>$staff,
-            
+            'pemberkasan'=> $pemberkasan
         ]);
     }   
     public function detail($id)

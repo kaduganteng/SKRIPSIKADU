@@ -60,7 +60,7 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Position <span class="text-danger">*</span></label> 
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Posisi <span class="text-danger">*</span></label> 
         <div class="col-12 col-md-5 col-lg-5">
             <select name="position_id" class="form-control select2 @error('position_id') is-invalid @enderror">
                 <option value=""></option>
@@ -77,7 +77,7 @@
     </div>
 
     <div class="form-group row">
-        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Departement <span class="text-danger">*</span></label> 
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Jabatan <span class="text-danger">*</span></label> 
         <div class="col-12 col-md-5 col-lg-5">
             <select name="departement_id" class="form-control select2 @error('departement_id') is-invalid @enderror">
                 <option value=""></option>
@@ -93,6 +93,18 @@
         </div> 
     </div>
 
+    <div class="form-group row">
+        <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">NIP<span class="text-danger">*</span></label> 
+        <div class="col-12 col-md-5 col-lg-5">
+            <input type="text" name="nip" class="form-control @error('nip') is-invalid @enderror" value="{{ old('nip', $staff->nip ?? '') }}" placeholder="1234...." onkeypress="return hanyaAngka(this)">
+            @error('nip')
+                <span class="invalid-feedback" role="alert">
+                    <strong>{{ $errors->first('nip') }}</strong>
+                </span>
+            @enderror
+        </div> 
+    </div>
+    
     <div class="form-group row">
         <label class="col-md-4 col-xs-4 col-form-label justify-flex-end">Alamat <span class="text-danger">*</span></label> 
         <div class="col-12 col-md-5 col-lg-5">

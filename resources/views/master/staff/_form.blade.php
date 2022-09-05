@@ -120,7 +120,7 @@
         <div class="col-12 col-md-5 col-lg-5 offset-md-4">
             <div class="checkbox">
                 <label>
-                    <input type="checkbox" name="makeUserAccount" value="true" {{ old('makeUserAccount') ? 'checked' : '' }} class="toggle-form-user"> Buat akun user untuk karyawan ini.
+                    <input type="checkbox" name="makeUserAccount" value="true" {{ old('makeUserAccount') ? 'checked' : '' }} class="toggle-form-user"> Buat akun user untuk guru ini.
                 </label>
             </div>
         </div>

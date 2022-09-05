@@ -23,6 +23,7 @@ class CreateQuisionerTable extends Migration
             $table->string('point4');
             $table->string('point5');
             $table->string('masukan');
+            $table->string('totalpoint');
             $table->timestamps();
         });
     }

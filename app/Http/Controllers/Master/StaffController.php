@@ -21,7 +21,7 @@ class StaffController extends Controller
 
     public function create()
     {
-        $data['title'] = "Tambah Staff";
+        $data['title'] = "Tambah Data Guru";
         $data['position'] = Position::all();
         $data['roles'] = Roles::all();
         $data['departement'] = Departement::all();
@@ -65,14 +65,14 @@ class StaffController extends Controller
 
         $message = [
             'alert-type'=>'success',
-            'message'=> 'Data staff created successfully'
+            'message'=> 'Data Guru berhasil ditambahkan'
         ];  
         return redirect()->route('master.staff.index')->with($message);
     }
 
     public function edit(Staff $staff)
     {
-        $data['title'] = 'Edit Staff';
+        $data['title'] = 'Edit Data Guru';
         $data['staff'] = $staff;
         $data['position'] = Position::all();
         $data['departement'] = Departement::all();
@@ -115,7 +115,7 @@ class StaffController extends Controller
 
         $message = [
             'alert-type'=>'success',
-            'message'=> 'Data staff updated successfully'
+            'message'=> 'Data Guru berhasil diupdate'
         ];  
         return redirect()->route('master.staff.index')->with($message);
     }
@@ -134,7 +134,7 @@ class StaffController extends Controller
             $message = [
                 'alert-type' => 'success',
                 'count' => $count,
-                'message' => 'Data staff deleted successfully.'
+                'message' => 'Data Guru berhasil dihapus'
             ];
             return response()->json($message);
         }

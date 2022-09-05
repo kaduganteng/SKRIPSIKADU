@@ -120,6 +120,9 @@ Route::middleware('auth')->group(function(){
     Route::get('quisioner', 'QuisionerController@index')->name('quisioner.index');
     Route::get('quisioner/create', 'QuisionerController@create')->name('quisioner.create');
     Route::post('quisioner/store', 'QuisionerController@store')->name('quisioner.store');
+    Route::get('/quisioner.delete.{id}', 'QuisionerController@destroy')->name('quisioner.destroy');
+    Route::get('quisioner/detail{id}', 'QuisionerController@detail')->name('quisioner.detail');
+
     //pemberkasan
     Route::get('pemberkasanuser/index', 'PemberkasanUserController@index')->name('pemberkasanuser.index');
     Route::get('pemberkasanuser/create', 'PemberkasanUserController@create')->name('pemberkasanuser.create');

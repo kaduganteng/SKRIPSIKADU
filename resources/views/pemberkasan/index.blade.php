@@ -27,7 +27,7 @@
                     <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Pemberkasan
+                                DATA PEMBERKASAN
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
@@ -38,7 +38,7 @@
                                     </tr>
                                 </thead> 
                                 <tbody>
-                                    @forelse ($staff as $item)
+                                    @forelse ($pemberkasan as $item)
                                         <tr id="hide{{ $item->id }}">
                                             <td class="text-center">
                                                 <a href="#" class="text-secondary nav-link p-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

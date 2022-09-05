@@ -12,11 +12,9 @@ class CreateTableAbsensi extends Migration
             $table->increments('id');
             $table->integer('schedule_id')->unsigned();
             $table->integer('attendance_id')->unsigned();
-            $table->integer('bulan_ke');
-            $table->integer('jumlah_lembur');
             $table->string('code');
             $table->string('periode');
-            $table->enum('status', ['Staff','Daily Worker']);
+            $table->enum('status', ['Staff','Guru']);
             $table->date('tanggal_absen');
             $table->time('waktu_masuk');
             $table->time('waktu_keluar');

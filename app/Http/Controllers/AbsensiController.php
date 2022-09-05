@@ -33,7 +33,7 @@ class AbsensiController extends Controller
         $maxkode = sprintf("%03s",$kode_count);
         $create_code = "ABSEN-KODE-".$maxkode;
         $data['code']  = $create_code;
-        $data['title'] = "Create Master Absen";
+        $data['title'] = "Buat Master Absensi";
         $data['month'] = array("","Januari","Februari","Maret","April","Mei","Juni","Juli", 'Agustus', 'September', 'Oktober', 'November', 'Desember');
         return view('absensi.master.create', $data);
     }
@@ -98,7 +98,7 @@ class AbsensiController extends Controller
 
             $message = [
                 'alert-type' => 'success',
-                'message' => 'Absensi created successfully.'
+                'message' => 'Absensi Berhasil Dibuat.'
             ];
             return redirect()->route('absensi.index')->with($message);
         }

@@ -33,7 +33,7 @@
                                             <td>{{ $staff->departement->name ?? '' }}</td>
                                         </tr>
                                         <tr>
-                                            <td width="10">nip</td>
+                                            <td width="10">NIP</td>
                                             <td width="5">:</td>
                                             <td>{{ $staff->nip ?? '' }}</td>
                                         </tr>

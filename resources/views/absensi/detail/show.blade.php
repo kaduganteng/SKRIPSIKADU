@@ -31,7 +31,7 @@
                                                 @endforeach
                                             </select>
                                             <div class="input-group-append">
-                                                <button type="submit" class="btn btn-secondary btn-sm">Filter</button>
+                                                <button type="submit" clas  s="btn btn-secondary btn-sm">Filter</button>
                                             </div>
                                         </div>
                                     </form>

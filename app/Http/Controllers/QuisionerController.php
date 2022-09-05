@@ -11,21 +11,31 @@ use DB;
 
 class QuisionerController extends Controller
 {
-  public function index(Request $request)
-  {  $staff=Staff::all();
-     $quisioner= Quisioner::all();
-      return view('quisioner.index',[
+  public function index()
+  {   
+      $quisioner= Quisioner::join('tb_staff','tb_staff.id','=','tb_quisioner.guru_id')->get();
+      return view ('quisioner.index',[
         'quisioner'=> $quisioner
-      ]);
-          
+    ]);
+  }
 
-    
+  public function detail($id)
+  {
+    $staff=Staff::find($id);
+    $position = Position::find($id);
+    $quisioner= Quisioner::join('tb_staff','tb_staff.id','=','tb_quisioner.guru_id')->get();
+     return view('quisioner.detail',[
+       'quisioner'=> $quisioner,
+       'staff'=>$staff,
+       'position'=>$position
+     ]);
   }
 
   public function create()
   { $data['title'] = "QUISIONER";
     $staff = Staff::all();
     $posisi = Position::all();
+    
     return view ('quisioner.create',$data,[
         'staff'=>$staff,
         'posisi'=>$posisi
@@ -43,9 +53,16 @@ class QuisionerController extends Controller
         'point3'=>$request->point3,
         'point4'=>$request->point4,
         'point5'=>$request->point5,
-        'masukan'=>$request->masukan
+        'masukan'=>$request->masukan  
     ]);
+
     return redirect()->back();
 
   }
+
+  public function destroy($id)
+    {
+        $quisioner = Quisioner::destroy($id);
+        return redirect()->back();
+    }
 }
