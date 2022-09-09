@@ -16,9 +16,6 @@
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
-                        <a href="{{ route('quisioner.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
-                                <i class="fa fa-search"></i> Lihat Form Quisioner
-                            </a>
                     </div>
                 </form>
             </div>                
@@ -38,26 +35,6 @@
                                         </a>
                                         </h3>
                                     </div> 
-                                    <div class="container-fluid row p-2" style="font-size: 14px;">
-                                        <div class="col-md-9 p-0">
-                                            <table class="table no-border header-table mb-0" style="white-space: normal;">
-                                                <tr style="line-height: 1px;">
-                                                <td style="width: 100px;">
-                                                <table class="table no-border header-table mb-0 ml-2 mt-2">
-                                                    <tr style="line-height: 1px;">
-                                                        <td width="100">Nama</td>
-                                                        <td width="10" class="text-center">:</td>
-                                                        <td>{{ $staff->name }}</td>
-                                                    </tr>
-                                                    <tr style="line-height: 1px;">
-                                                        <td width="100">Jabatan</td>
-                                                        <td width="10" class="text-center">:</td>
-                                                        <td>{{ $position->name }}</td>
-                                                    </tr>
-                                                </table>
-                                            </table>
-                                        </div>
-                                    </div>
                                 <div class="card-body">
                                     <table id="datatable" class="table table-hover table-striped">
                                     <thead>
@@ -94,6 +71,8 @@
                                             <td>{{$item->point4 ?? '' }}</td>
                                             <td>{{$item->point5 ?? '' }}</td>
                                             <td>{{$item->masukan ?? '' }}</td>
+
+                                            <input type="button" value="">
                                             <td>{{$item->point1+$item->point2+$item->point3+$item->point4+$item->point5}}</td>
                                         </tr>
                                     @endforeach

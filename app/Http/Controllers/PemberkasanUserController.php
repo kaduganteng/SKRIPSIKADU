@@ -21,9 +21,6 @@ class PemberkasanUserController extends Controller
         else {
         return abort (404);
         }
-
-
-      
     }
 
     public function create()
@@ -35,72 +32,72 @@ class PemberkasanUserController extends Controller
     public function store (Request $request)
     {
         $kalender = $request->file('kalender');
-        $nama_filekalender = time() . "_" . $kalender->getClientOriginalExtension();
+        $nama_filekalender = time() . "_" . $kalender->getClientOriginalName();
         $tujuan = 'upload/';
         $kalender->move($tujuan, $nama_filekalender);
 
         $programtahunan = $request->file('programtahunan');
-        $nama_fileprogramtahunan = time() . "." . $programtahunan->getClientOriginalExtension();
+        $nama_fileprogramtahunan = time() . "." . $programtahunan->getClientOriginalName();
         $tujuan = 'upload/';
         $programtahunan->move($tujuan, $nama_fileprogramtahunan);
 
         $silabus = $request->file('silabus');
-        $nama_filesilabus = time() . "." . $silabus->getClientOriginalExtension();
+        $nama_filesilabus = time() . "." . $silabus->getClientOriginalName();
         $tujuan = 'upload/';
         $silabus->move($tujuan, $nama_filesilabus);
         
         $kkm = $request->file('kkm');
-        $nama_filekkm = time() . "." . $kkm->getClientOriginalExtension();
+        $nama_filekkm = time() . "." . $kkm->getClientOriginalName();
         $tujuan = 'upload/';
         $kkm->move($tujuan, $nama_filekkm); 
         
         $jadwalpembelajaran = $request->file('jadwalpembelajaran');
-        $nama_filejadwalpembelajaran = time() . "." . $jadwalpembelajaran->getClientOriginalExtension();
+        $nama_filejadwalpembelajaran = time() . "." . $jadwalpembelajaran->getClientOriginalName();
         $tujuan = 'upload/';
         $jadwalpembelajaran->move($tujuan, $nama_filejadwalpembelajaran); 
         
         $rencanapembelajaran = $request->file('rencanapembelajaran');
-        $nama_filerencanapembelajaran = time() . "." . $rencanapembelajaran->getClientOriginalExtension();
+        $nama_filerencanapembelajaran = time() . "." . $rencanapembelajaran->getClientOriginalName();
         $tujuan = 'upload/';
         $rencanapembelajaran->move($tujuan, $nama_filerencanapembelajaran); 
         
         $agendakegiatan = $request->file('agendakegiatan');
-        $nama_fileagendakegiatan = time() . "." . $agendakegiatan->getClientOriginalExtension();
+        $nama_fileagendakegiatan = time() . "." . $agendakegiatan->getClientOriginalName();
         $tujuan = 'upload/';
         $agendakegiatan->move($tujuan, $nama_fileagendakegiatan);
         
         $programevaluasi = $request->file('programevaluasi');
-        $nama_fileprogramevaluasi = time() . "." . $programevaluasi->getClientOriginalExtension();
+        $nama_fileprogramevaluasi = time() . "." . $programevaluasi->getClientOriginalName();
         $tujuan = 'upload/';
         $programevaluasi->move($tujuan, $nama_fileprogramevaluasi); 
         
         $programanalisis = $request->file('programanalisis');
-        $nama_fileprogramanalisis = time() . "." . $programanalisis->getClientOriginalExtension();
+        $nama_fileprogramanalisis = time() . "." . $programanalisis->getClientOriginalName();
         $tujuan = 'upload/';
         $programanalisis->move($tujuan, $nama_fileprogramanalisis); 
         
         $programperbaikan = $request->file('programperbaikan');
-        $nama_fileprogramperbaikan = time() . "." . $programperbaikan->getClientOriginalExtension();
+        $nama_fileprogramperbaikan = time() . "." . $programperbaikan->getClientOriginalName();
         $tujuan = 'upload/';
         $programperbaikan->move($tujuan, $nama_fileprogramperbaikan);
         
         $tugasstrukturdantidak = $request->file('tugasstrukturdantidak');
-        $nama_filetugasstrukturdantidak = time() . "." . $tugasstrukturdantidak->getClientOriginalExtension();
+        $nama_filetugasstrukturdantidak = time() . "." . $tugasstrukturdantidak->getClientOriginalName();
         $tujuan = 'upload/';
         $tugasstrukturdantidak->move($tujuan, $nama_filetugasstrukturdantidak); 
         
         $programbimbingankonseling = $request->file('programbimbingankonseling');
-        $nama_fileprogrambimbingankonseling = time() . "." . $programbimbingankonseling->getClientOriginalExtension();
+        $nama_fileprogrambimbingankonseling = time() . "." . $programbimbingankonseling->getClientOriginalName();
         $tujuan = 'upload/';
         $programbimbingankonseling->move($tujuan, $nama_fileprogrambimbingankonseling); 
         
         $bukudaftarkelas = $request->file('bukudaftarkelas');
-        $nama_filebukudaftarkelas = time() . "." . $bukudaftarkelas->getClientOriginalExtension();
+        $nama_filebukudaftarkelas = time() . "." . $bukudaftarkelas->getClientOriginalName();
         $tujuan = 'upload/';
         $bukudaftarkelas->move($tujuan, $nama_filebukudaftarkelas); 
         
         $daftarnilai = $request->file('daftarnilai');
-        $nama_filedaftarnilai = time() . "." . $daftarnilai->getClientOriginalExtension();
+        $nama_filedaftarnilai = time() . "." . $daftarnilai->getClientOriginalName();
         $tujuan = 'upload/';
         $daftarnilai->move($tujuan, $nama_filedaftarnilai);
 
@@ -124,4 +121,15 @@ class PemberkasanUserController extends Controller
         return redirect()->back();
     }
 
+    public function edit()
+    {
+        $data['title'] = "Edit Berkas";
+        $data['pemberkasan'] = Pemberkasan::all();
+        return view('pemberkasan.user.edit', $data);
+    }
+
+    public function update(Request $request)
+    {
+        # code...
+    }
 }

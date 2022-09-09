@@ -38,7 +38,6 @@
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama</th>
-                                        <th>Tgl. Masuk</th>
                                         <th>Ket. Jadwal</th>
                                         <th>Status</th>
                                     </tr>
@@ -61,7 +60,6 @@
                                                 </div>
                                             </td>
                                             <td>{{ $item->staff->name ?? '' }}</td> 
-                                            <td>{{ $item->tgl_masuk ?? '' }}</td> 
                                             <td>{{ $item->ket_schedule ?? '' }}</td> 
                                             <td>
                                                 <span class="badge {{ $item->staff->position->status == 'Staff' ? 'badge-info' : 'badge-secondary' }}">{{ $item->staff->position->status ?? '' }}</span>

@@ -16,6 +16,15 @@
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
+                       <div class="float-right">
+                         <a href="{{ route('quisioner.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
+                            <i class="fa fa-plus-square"></i>Form Quisioner
+                        </a>
+                        <a href="{{ route('quisioner.detail') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
+                            <i class="fa fa-search"></i> Hasil Quisioner
+                        </a>
+                       </div>
+                        
                     </div>
                 </form>
             </div>
@@ -34,35 +43,20 @@
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama Guru</th>
-                                        <th class="text-right">Detail</th>
+                                        <th>Jabatan</th>
+                                        <th>Total Point</th>
                                     </tr>
                                 </thead> 
+                                @foreach ($quisioner as $item)
                                 <tbody>
-                                    @forelse ($quisioner as $item)
-                                        <tr id="hide{{ $item->id }}">
-                                            <td class="text-center">
-                                                <a href="#" class="text-secondary nav-link p-0" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                                    <i class="fas fa-ellipsis-v"></i>
-                                                </a>
-                                                <div class="dropdown-menu dropdown-menu-right">
-                                                    {{-- 
-                                                    <div class="dropdown-divider"></div> --}}
-                                                    <a class="dropdown-item" href="javascript:void(0)" onClick="hapus({{$item->id}})">
-                                                        <i class="far fa-trash-alt mr-2"></i> Hapus
-                                                    </a>
-                                                </div>
-                                            </td>
-                                            <td>{{ $item->name ?? '' }}</td> 
-                                            <td class="text-right">
-                                                <a href="{{ route('quisioner.detail', $item->id) }}" class="btn btn-sm btn-info">Hasil Quisioner</a>    
-                                            </td> 
-                                        </tr>
-                                    @empty
-                                                <tr>
-                                                    <td class="text-center" colspan="9">Tidak ada data untuk ditampilkan</td>
-                                                </tr>
-                                    @endforelse
-                                </tbody>
+                                    <tr>
+                                        <td></td>
+                                        <td >{{ $item->name }}</td>
+                                        <td >{{ $item->posisi }}</td>
+                                        <td >{{ $item->totalpoint }}</td> 
+                                    </tr>
+                                </tbody>  
+                                @endforeach
                             </table>
                         </div>
                     </div>

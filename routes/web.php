@@ -15,12 +15,28 @@ Route::namespace('Auth')->group(function () {
     Route::post('/logout', 'LoginController@logout')->name('logout');
 });
 
-
+Route::get('quisioner/create', 'QuisionerController@create')->name('quisioner.create');
 Route::middleware('auth')->group(function(){
     Route::get('/', 'HomeController@index')->name('home');
     Route::get('/home', 'HomeController@index')->name('home');
     Route::get('/home/getStaffPosition', 'HomeController@getStaffPosition');
     Route::get('/home/getStaffDepartement', 'HomeController@getStaffDepartement');
+
+    //Perangkingan Saw
+
+    Route::resources([
+        'alternatives' => AlternativeController::class,
+        'criteriaratings' => CriteriaRatingController::class,
+        'criteriaweights' => CriteriaWeightController::class
+        ]);
+        
+        
+        Route::get('/decision', [DecisionController::class, 'index']);
+        
+        Route::get('/normalization', [NormalizationController::class, 'index']);
+        
+        Route::get('/rank', [RankController::class, 'index']);
+        
 
     //personal karyawan
     Route::get('/users/account/{id}/edit', 'UsersController@editAccount')->name('users.account.edit');
@@ -118,10 +134,9 @@ Route::middleware('auth')->group(function(){
     });
     //Quisioner
     Route::get('quisioner', 'QuisionerController@index')->name('quisioner.index');
-    Route::get('quisioner/create', 'QuisionerController@create')->name('quisioner.create');
     Route::post('quisioner/store', 'QuisionerController@store')->name('quisioner.store');
     Route::get('/quisioner.delete.{id}', 'QuisionerController@destroy')->name('quisioner.destroy');
-    Route::get('quisioner/detail{id}', 'QuisionerController@detail')->name('quisioner.detail');
+    Route::get('quisioner/detail', 'QuisionerController@detail')->name('quisioner.detail');
 
     //pemberkasan
     Route::get('pemberkasanuser/index', 'PemberkasanUserController@index')->name('pemberkasanuser.index');

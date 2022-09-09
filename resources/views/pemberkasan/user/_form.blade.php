@@ -58,7 +58,7 @@
                                                     Kalender Pendidikan
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="kalender">
+                                                    <input type="file" name="kalender" >
                                                 </td>
                                               
                                             </tr>
@@ -71,7 +71,7 @@
                                                     Program Tahunan
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="programtahunan">
+                                                    <input type="file" name="programtahunan" >
                                                 </td>
                                               
                                             </tr>
@@ -84,7 +84,7 @@
                                                     Silabus
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="silabus">
+                                                    <input type="file" name="silabus" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -95,7 +95,7 @@
                                                     KKM
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="kkm">
+                                                    <input type="file" name="kkm" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -106,7 +106,7 @@
                                                     Jadwal Pembelajaran
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="jadwalpembelajaran">
+                                                    <input type="file" name="jadwalpembelajaran" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -117,7 +117,7 @@
                                                     Rencana Pembelajaran
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="rencanapembelajaran">
+                                                    <input type="file" name="rencanapembelajaran" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -139,7 +139,7 @@
                                                     Program Evaluasi
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="programevaluasi">
+                                                    <input type="file" name="programevaluasi" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -150,7 +150,7 @@
                                                     Program Analisi
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="programanalisis">
+                                                    <input type="file" name="programanalisis" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -161,7 +161,7 @@
                                                     Program Perbaikan
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="programperbaikan">
+                                                    <input type="file" name="programperbaikan" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -172,7 +172,7 @@
                                                     Tugas Struktur dan Tidak
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="tugasstrukturdantidak">
+                                                    <input type="file" name="tugasstrukturdantidak" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -183,7 +183,7 @@
                                                     Program Bimbingan Konseling
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="programbimbingankonseling">
+                                                    <input type="file" name="programbimbingankonseling" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -194,7 +194,7 @@
                                                     Buku Daftar Kelas
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="bukudaftarkelas">
+                                                    <input type="file" name="bukudaftarkelas" >
                                                 </td>
                                               
                                             </tr> <tr>
@@ -205,7 +205,7 @@
                                                     Daftar Nilai
                                                 </td>
                                                 <td>
-                                                    <input type="file" name="daftarnilai">
+                                                    <input type="file" name="daftarnilai" >
                                                 </td>
                                               
                                             </tr>

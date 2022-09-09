@@ -13,21 +13,21 @@ class QuisionerController extends Controller
 {
   public function index()
   {   
-      $quisioner= Quisioner::join('tb_staff','tb_staff.id','=','tb_quisioner.guru_id')->get();
+      $quisioner= DB::table('tb_quisioner')->selectRaw('tb_staff.name,sum(point1+point2+point3+point4+point5) as totalpoint,tb_position.name as posisi')
+      ->join('tb_staff','tb_staff.id','=','tb_quisioner.guru_id')->join('tb_position','tb_position.id','=','tb_quisioner.posisi_id')
+      ->groupBy('tb_staff.name')->get();
       return view ('quisioner.index',[
         'quisioner'=> $quisioner
     ]);
   }
 
-  public function detail($id)
+  public function detail()
   {
-    $staff=Staff::find($id);
-    $position = Position::find($id);
+    
+   
     $quisioner= Quisioner::join('tb_staff','tb_staff.id','=','tb_quisioner.guru_id')->get();
      return view('quisioner.detail',[
        'quisioner'=> $quisioner,
-       'staff'=>$staff,
-       'position'=>$position
      ]);
   }
 
