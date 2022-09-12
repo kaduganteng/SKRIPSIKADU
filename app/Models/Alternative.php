@@ -13,7 +13,7 @@ class Alternative extends Model
      *
      * @var string
      */
-    protected $table = 'tb_alternatives';
+    protected $table = 'alternatives';
 
     /**
      * The attributes that are mass assignable.

@@ -14,7 +14,7 @@ class AlternativeScore extends Model
      *
      * @var string
      */
-    protected $table = 'tb_alternativescores';
+    protected $table = 'alternativescores';
 
     /**
      * The attributes that are mass assignable.

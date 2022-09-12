@@ -22,20 +22,9 @@ Route::middleware('auth')->group(function(){
     Route::get('/home/getStaffPosition', 'HomeController@getStaffPosition');
     Route::get('/home/getStaffDepartement', 'HomeController@getStaffDepartement');
 
-    //Perangkingan Saw
+    //Perangkingan SAW
 
-    Route::resources([
-        'alternatives' => AlternativeController::class,
-        'criteriaratings' => CriteriaRatingController::class,
-        'criteriaweights' => CriteriaWeightController::class
-        ]);
-        
-        
-        Route::get('/decision', [DecisionController::class, 'index']);
-        
-        Route::get('/normalization', [NormalizationController::class, 'index']);
-        
-        Route::get('/rank', [RankController::class, 'index']);
+   
         
 
     //personal karyawan
@@ -58,6 +47,16 @@ Route::middleware('auth')->group(function(){
         Route::get('/roles/{roles}/edit', 'RolesController@edit')->name('roles.edit');
         Route::patch('/roles/{roles}/update', 'RolesController@update')->name('roles.update');
         Route::get('/roles/{id}', 'RolesController@destroy')->name('roles.destroy');
+
+
+        Route::resources([
+            'alternatives' => AlternativeController::class,
+            'criteriaratings' => CriteriaRatingController::class,
+            'criteriaweights' => CriteriaWeightController::class
+            ]);
+        Route::get('/decision','DecisionController@index')->name('decision.index');
+        Route::get('/normalization', 'NormalizationController@index')->name('normalization.index');
+        Route::get('/rank', 'RankController@index')->name('rank.index');
     });
 
     Route::middleware('role:admin|accounting|supervisor')->group(function(){

@@ -136,6 +136,14 @@
                     <li class="nav-header">Special Menu</li>
                     
                     <li class="nav-item">
+                        <a href="{{ route('decision.index') }}" class="nav-link {{ $page == 'decision' ? 'active' : '' }}">
+                            <i class="nav-icon fa fa-user-circle-o"></i>
+                            <p>Decision</p>
+                        </a>
+                    </li>
+
+
+                    <li class="nav-item">
                         <a href="{{ route('users.index') }}" class="nav-link {{ $page == 'users' ? 'active' : '' }}">
                             <i class="nav-icon fa fa-user-circle-o"></i>
                             <p>Users</p>

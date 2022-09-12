@@ -14,7 +14,7 @@ class CriteriaWeight extends Model
      *
      * @var string
      */
-    protected $table = 'tb_criteriaweights';
+    protected $table = 'criteriaweights';
 
     /**
      * The attributes that are mass assignable.

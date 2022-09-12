@@ -14,7 +14,7 @@ class CriteriaRating extends Model
      *
      * @var string
      */
-    protected $table = 'tb_criteriaratings';
+    protected $table = 'criteriaratings';
 
     /**
      * The attributes that are mass assignable.

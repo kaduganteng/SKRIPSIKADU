@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTbAlternativeTable extends Migration
+class CreateCriteriaratingsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,12 @@ class CreateTbAlternativeTable extends Migration
      */
     public function up()
     {
-        Schema::create('tb_alternative', function (Blueprint $table) {
+        Schema::create('criteriaratings', function (Blueprint $table) {
             $table->id();
-            $table->string('name', 100);
+            $table->unsignedBigInteger('criteria_id');
+            $table->foreign('criteria_id')->references('id')->on('criteriaweights');
+            $table->float('rating');
+            $table->string('description', 100);
             $table->timestamps();
         });
     }
@@ -27,6 +30,6 @@ class CreateTbAlternativeTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tb_alternative');
+        Schema::dropIfExists('criteriaratings');
     }
 }
