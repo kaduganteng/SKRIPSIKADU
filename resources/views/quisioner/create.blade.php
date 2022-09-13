@@ -9,17 +9,12 @@
         <div class="content pb-5">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-md-12">
-                        <div class="card">
+                    <div class="col-md-19">
+                        <div class="card" style="align-items: center">
                             <div class="card-header" style="align-items: center">
                                 <div class="text-center">
                                     <h3 class="card-title"> {{ $title }}</h3>
                                 </div>
-                                <div class="back-top">
-                                <a href="{{ route('quisioner.detail') }}" class="btn text-muted">
-                                    <i class="fa fa-arrow-left fa-fw"></i></span>
-                                </a>
-                            </div>
                             </div> 
                             <form action="{{ route('quisioner.store') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                                 @csrf
