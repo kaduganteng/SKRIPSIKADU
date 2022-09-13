@@ -5,17 +5,27 @@
 @section('content')
     
 <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
     <div class="content-header">
         <div class="container-fluid">
-            <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Alternative & Score</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-
-                </div><!-- /.col -->
-            </div><!-- /.row -->
+            <div class="content-header">
+                <div class="container-fluid">
+                    <form>
+                        <div class="form-inline">
+                            <div class="input-group app-shadow">
+                                <div class="input-group-append">
+                                    <div class="input-group-text bg-white border-0">
+                                        <span><i class="fa fa-search"></i> </span>
+                                    </div>
+                                </div>
+                                <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
+                            </div> 
+                            <a href="{{ route('alternatives.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
+                                <i class="fas fa-plus fa-fw"></i> Tambah baru
+                            </a>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div><!-- /.container-fluid -->
     </div>
     <!-- /.content-header -->
@@ -26,6 +36,10 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
+                        <div class="card-header bg-light">
+                            Data Alternative dan Skor
+                            <span id="count" class="badge badge-danger float-right float-xl-right mt-1"></span>
+                        </div>
                         <div class="card-body">
                             @if ($message = Session::get('success'))
                             <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -35,9 +49,6 @@
                                 </button>
                               </div>
                             @endif
-
-                            <a href="{{route('alternatives.create')}}" class='btn btn-primary'> <span
-                                    class='fa fa-plus'></span> Add Alternative</a>
                             <br>
                             <table id="mytable" class="display nowrap table table-striped table-bordered">
                                 <thead>
@@ -72,7 +83,7 @@
                                                 </span>
                                                 <span data-toggle="tooltip" data-placement="bottom" title="Delete Data">
                                                     <button type="submit" class="btn btn-danger">
-                                                        <span class="fa fa-trash-alt"></span>
+                                                        <span class="fa fa-trash"></span>
                                                     </button>
                                                 </span>
                                             </form>

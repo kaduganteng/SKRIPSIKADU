@@ -34,6 +34,7 @@
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama Guru</th>
+                                        <th class="text-right">Point</th>
                                         <th class="text-right">Detail</th>
                                     </tr>
                                 </thead> 
@@ -53,9 +54,15 @@
                                                 </div>
                                             </td>
                                             <td>{{ $item->name ?? '' }}</td> 
+                                            
+                                            <td>
+                                            <select name="" id=""></select>
+                                            </td>
+                                            
                                             <td class="text-right">
                                                 <a href="{{ route('pemberkasan.detail', $item->id) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
                                             </td> 
+
                                         </tr>
                                     @empty
                                                 <tr>

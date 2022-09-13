@@ -219,7 +219,7 @@
 
                             
                             <div class="card-footer p-2">
-                                <button type="submit " class="btn btn-info   btn-sm">SUBMIT</button>
+                                <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button> 
                             </div>
                             </form>
                         </div>

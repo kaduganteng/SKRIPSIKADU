@@ -15,6 +15,8 @@
         </div>
 
         <nav class="mt-2">
+
+            
             <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                 <li class="nav-item">
                     <a href="{{ route('home') }}" class="nav-link {{ $page == 'home'|| $page == '' ? 'active' : '' }}">
@@ -58,7 +60,7 @@
 
                 <li class="nav-item has-treeview {{ $page == 'absensi' ? 'menu-open' : '' }}">
                     <a href="#" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-laptop"></i>
+                        <i class="nav-icon fa fa-calendar"></i>
                         <p>
                             Absensi
                             <i class="right fas fa-angle-left"></i>
@@ -67,22 +69,22 @@
                     <ul class="nav nav-treeview">
                         <li class="nav-item">
                             <a href="{{ route('schedule.index') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
-                            <i class="nav-icon fa fa-calendar"></i>
+                            <i class="nav-icon fa fa-circle-o"></i>
                             <p>Jadwal Kehadiran</p>
                             </a>
                         </li>
                         <li class="nav-item">
                         <a href="{{ route('absensi.index') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
-                            <i class="nav-icon fas fa-tasks"></i>
+                            <i class="nav-icon fa fa-circle-o"></i>
                             <p>Data Absensi</p>
                         </a>
                         </li>
                         <li class="nav-item">
-                    <a href="{{ route('cuti.index') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
-                        <i class="nav-icon fa fa-calendar"></i>
-                        <p>Permohonan Cuti</p>
-                    </a>
-                </li>   
+                            <a href="{{ route('cuti.index') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p>Permohonan Cuti</p>
+                            </a>
+                        </li>   
                     </ul>
                 </li>
                
@@ -132,17 +134,72 @@
                             <p>Quisioner</p>
                         </a>
                     </li>
-               
-                    <li class="nav-header">Special Menu</li>
-                    
-                    <li class="nav-item">
-                        <a href="{{ route('decision.index') }}" class="nav-link {{ $page == 'decision' ? 'active' : '' }}">
-                            <i class="nav-icon fa fa-user-circle-o"></i>
-                            <p>Decision</p>
+                    <li class="nav-header">Menu Perangkingan</li>
+
+                    <li class="nav-item has-treeview {{ $page == 'absensi' ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                            <i class="fa fa-area-chart"></i>
+                            <p>
+                                Criteria & Alternative
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
                         </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ url('criteriaweights') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p>Criteria Weight</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="{{ url('criteriaratings') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p>Criteria Rating</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('alternatives') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
+                                    <i class="nav-icon fa fa-circle-o"></i>
+                                    <p>Alternative</p>
+                                </a>
+                            </li>   
+                        </ul>
+                    </li>
+
+                    <li class="nav-item has-treeview {{ $page == 'absensi' ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                            <i class="nav-icon fa fa-bar-chart"></i>
+                            <p>
+                                Hasil
+                                <i class="right fas fa-angle-left"></i>
+                            </p>
+                        </a>
+                        <ul class="nav nav-treeview">
+                            <li class="nav-item">
+                                <a href="{{ url('decision') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p>Decision</p>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+                            <a href="{{ url('normalization') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                                <i class="nav-icon fa fa-circle-o"></i>
+                                <p>Normalization</p>
+                            </a>
+                            </li>
+                            <li class="nav-item">
+                                <a href="{{ url('rank') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
+                                    <i class="nav-icon fa fa-circle-o"></i>
+                                    <p>Ranking</p>
+                                </a>
+                            </li>   
+                        </ul>
                     </li>
 
 
+
+                    <li class="nav-header">Special Menu</li>
+                 
                     <li class="nav-item">
                         <a href="{{ route('users.index') }}" class="nav-link {{ $page == 'users' ? 'active' : '' }}">
                             <i class="nav-icon fa fa-user-circle-o"></i>

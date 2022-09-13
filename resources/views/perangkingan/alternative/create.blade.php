@@ -8,11 +8,7 @@
     <div class="content-header">
         <div class="container-fluid">
             <div class="row mb-2">
-                <div class="col-sm-6">
-                    <h1 class="m-0">Add new alternative</h1>
-                </div><!-- /.col -->
-                <div class="col-sm-6">
-                </div><!-- /.col -->
+               
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
     </div>
@@ -24,7 +20,25 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="card">
+                        <div class="card-header">
+                            <div class="text-center">
+                                <h3 class="card-title">Tambah Alternative dan Skor baru</h3>
+                            </div>
+                            <div class="back-top">
+                            <a href="{{ url('alternatives') }}" class="btn text-muted">
+                                <i class="fa fa-arrow-left fa-fw"></i></span>
+                            </a>
+                            </div>
+                        </div>
                         <div class="card-body">
+                            <div class="card card-solid">
+                                <div class="card-body pb-0 pt-3">
+                                    <blockquote>
+                                    <b>Keterangan!!</b><br>
+                                    <small><cite title="Source Title">Inputan Yang Ditanda Bintang Merah (<span class="text-danger">*</span>) Harus Di Isi !!</cite></small>
+                                    </blockquote>
+                                </div>
+                            </div>
                             @if ($errors->any())
                             <div class="alert alert-danger">
                                 <strong>Whoops!</strong> There were some problems with your input.<br><br>
@@ -60,7 +74,7 @@
                                     </select>
                                 </div>
                                 @endforeach
-                                <button type="submit" class="btn btn-primary">Submit</button>
+                                <button type="submit" class="btn btn-primary mr-1"><i class="fas fa-check-double mr-1"></i> Simpan</button> 
                             </form>
                         </div>
                     </div>

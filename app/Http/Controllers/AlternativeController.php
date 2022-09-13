@@ -34,7 +34,7 @@ class AlternativeController extends Controller
         $alternatives = Alternative::get();
 
         $criteriaweights = CriteriaWeight::get();
-        return view('alternative.index', compact('scores', 'alternatives', 'criteriaweights'))->with('i', 0);
+        return view('perangkingan.alternative.index', compact('scores', 'alternatives', 'criteriaweights'))->with('i', 0);
     }
 
     /**
@@ -46,7 +46,7 @@ class AlternativeController extends Controller
     {
         $criteriaweights = CriteriaWeight::get();
         $criteriaratings = CriteriaRating::get();
-        return view('alternative.create', compact('criteriaweights', 'criteriaratings'));
+        return view('perangkingan.alternative.create', compact('criteriaweights', 'criteriaratings'));
     }
 
     /**
@@ -76,7 +76,7 @@ class AlternativeController extends Controller
             $score->save();
         }
 
-        return redirect()->route('alternatives.index')
+        return redirect()->route('perangkingan.alternatives.index')
             ->with('success', 'Alternative created successfully.');
     }
 
@@ -102,7 +102,7 @@ class AlternativeController extends Controller
         $criteriaweights = CriteriaWeight::get();
         $criteriaratings = CriteriaRating::get();
         $alternativescores = AlternativeScore::where('alternative_id', $alternative->id)->get();
-        return view('alternative.edit', compact('alternative', 'alternativescores', 'criteriaweights', 'criteriaratings'));
+        return view('perangkingan.alternative.edit', compact('alternative', 'alternativescores', 'criteriaweights', 'criteriaratings'));
     }
 
     /**

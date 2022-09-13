@@ -23,7 +23,7 @@ class CriteriaRatingController extends Controller
             'criteriaratings.description as description',
             'criteriaweights.name as name')
         ->get();
-        return view('criteriarating.index', compact('criteriaratings'))->with('i', 0);
+        return view('perangkingan.criteriarating.index', compact('criteriaratings'))->with('i', 0);
     }
 
     /**
@@ -34,7 +34,7 @@ class CriteriaRatingController extends Controller
     public function create()
     {
         $criteriaweight = CriteriaWeight::get();
-        return view('criteriarating.create', compact('criteriaweight'));
+        return view('perangkingan.criteriarating.create', compact('criteriaweight'));
     }
 
     /**
@@ -76,7 +76,7 @@ class CriteriaRatingController extends Controller
      */
     public function edit(CriteriaRating $criteriarating)
     {
-        return view('criteriarating.edit',compact('criteriarating'));
+        return view('perangkingan.criteriarating.edit',compact('criteriarating'));
     }
 
     /**

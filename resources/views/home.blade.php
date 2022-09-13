@@ -29,14 +29,35 @@
                                             <span class="d-none d-md-block d-lg-block">PERANGKINGAN</span>
                                         </div>
                                     </div> 
-                                    <table class="table table-bordered mb-0" style="font-size: 14px;">
-                                        <tbody>
-                                            <tr class="text-center bg-light" style="font-weight: bold;line-height: 1;">
-                                            <td  style="vertical-align : middle; white-space: normal; width:50px; text-align: center;">NO</td>
-                                                <td colspan="6"style="vertical-align : middle;width: 10px;">Nama Guru</td>
-                                                <td style="vertical-align : middle;white-space:normal;width: auto; height: auto;word-wrap: break-word;">Jabatan</td>
-                                                <td>Total Point</td>
+                                    <table id="mytable" class="display nowrap table table-striped table-bordered">
+                                        <thead>
+                                            <tr>
+                                                <th>#</th>
+                                                <th>Nama Guru</th>
+                                                @foreach ($criteriaweights as $c)
+                                                <th>{{$c->name}}</th>
+                                                @endforeach
+                                                <th>Total</th>
                                             </tr>
+                                        </thead>
+                                        <tbody>
+                                            @foreach ($alternatives as $a)
+                                            <tr>
+                                                <td>{{ ++$i }}</td>
+                                                <td>{{$a->name}}</td>
+                                                @php
+                                                $scr = $scores->where('ida', $a->id)->all();
+                                                $total = 0;
+                                                @endphp
+                                                @foreach ($scr as $s)
+                                                @php
+                                                $total += $s->rating;
+                                                @endphp
+                                                <td>{{$s->rating}}</td>
+                                                @endforeach
+                                                <td>{{$total}}</td>
+                                            </tr>
+                                            @endforeach
                                         </tbody>
                                     </table>
                                 </div>
