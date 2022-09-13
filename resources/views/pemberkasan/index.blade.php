@@ -56,7 +56,7 @@
                                             <td>{{ $item->name ?? '' }}</td> 
                                             
                                             <td>
-                                            <select name="" id=""></select>
+                                           
                                             </td>
                                             
                                             <td class="text-right">

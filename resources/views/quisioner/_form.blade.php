@@ -13,6 +13,17 @@
                         </select>
                     </div>
                     <hr>
+                    <div class="body" ><label for="">Pilih Guru :</label> 
+                        <select name="posisi_id"> 
+                            @if(!empty(@$data->posisi_id))
+                                <option value="{{@$data->posisi_id}}" {{!empty($data->name)?'selected':''}}>{{$data->name}}</option>
+                            @endif
+                            @foreach($posisi as $s)
+                                <option value="{{$s->id}}">{{$s->name}}</option>
+                            @endforeach
+                        </select>
+                    </div>
+                    <hr>
                     <div class="pertanyaan1">
                         <label for="quisioner">
                             bagaimana guru ini point 1

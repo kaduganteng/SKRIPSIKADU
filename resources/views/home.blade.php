@@ -4,12 +4,12 @@
 		<section class="content pb-3">
 			<div class="container-fluid">
 				<div class="row">
-					<div class="col-12">
-						<div class="row">
-							<div class="col-md-4 col-sm-4 col-12">
-								<div class="info-box bg-secondary-gradient">
+					<div class="col-10">
+						<div class="row" >
+							<div class="col-md-5 float-center">
+								<div class="info-box float-center bg-secondary-gradient" >
 									<span class="info-box-icon"><i class="fa fa-user-circle"></i></span>
-									<div class="info-box-content">
+									<div class="info-box-content" style="align-content: center" >
 										<span class="info-box-text">Jumlah Guru</span>
 										<span class="info-box-number">{{ $staff ?? 0 }}</span>
 									</div>

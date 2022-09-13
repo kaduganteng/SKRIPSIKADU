@@ -25,11 +25,10 @@
                 </form>
             </div>
         </div>
-    
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-8 order-last order-md-first">
                         <div class="card">
                             <div class="card-header bg-light">
                                 Data Absen
@@ -57,13 +56,36 @@
                             </table>
                         </div>
                     </div>
+                    <div class="col-md-4 order-first order-md-last">
+                        <div class="card">
+                            <div class="card-header bg-light">
+                                Total Absensi
+                            </div>
+                            <table id="datatable" class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Nama Guru</th> 
+                                        <th>Total Absensi</th>
+                                    </tr>
+                                </thead> 
+                                <tbody>
+                                 <td>KADUE</td>
+                                 <td>2000000</td>
+                                </tbody>
+                            </table>
+                        </div>
+                        </div>
+                    </div>                    
+
                 </div>
+
+               
             </div>
         </div>
     </div>
 
     <a href="{{ route('absensi.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
-        <span><i class="fas fa-plus fa-sm align-middle"></i></span>
+        <span><i class="fas fa-plus fa-sm align-middle"></i>wwww</span>
     </a>
 
 @endsection
