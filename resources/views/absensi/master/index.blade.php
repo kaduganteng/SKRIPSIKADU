@@ -59,18 +59,39 @@
                     <div class="col-md-4 order-first order-md-last">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Total Absensi
+                               Total Absensi
+                                <span class="badge badge-danger float-right float-xl-right mt-1"></span>
                             </div>
                             <table id="datatable" class="table table-hover table-striped">
                                 <thead>
                                     <tr>
-                                        <th>Nama Guru</th> 
-                                        <th>Total Absensi</th>
+                                        <th style="width:100px;">Nama Guru</th> 
+                                        <th>Jumlah Absensi</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
-                                 <td>KADUE</td>
-                                 <td>2000000</td>
+                                    <td>AI</td>
+                                    <td>14</td>
+                                </tbody>
+                                <tbody>
+                                    <td>FITRTI</td>
+                                    <td>13</td>
+                                </tbody>
+                                <tbody>
+                                    <td>RODIAH</td>
+                                    <td>14</td>
+                                </tbody>
+                                <tbody>
+                                    <td>SITI</td>
+                                    <td>12</td>
+                                </tbody>
+                                <tbody>
+                                    <td>YUDA</td>
+                                    <td>14</td>
+                                </tbody>
+                                <tbody>
+                                    <td>YUYU</td>
+                                    <td>14</td>
                                 </tbody>
                             </table>
                         </div>

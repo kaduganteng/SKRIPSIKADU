@@ -34,8 +34,8 @@
                                     <tr>
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama Guru</th>
-                                        <th class="text-right">Point</th>
-                                        <th class="text-right">Detail</th>
+                                        <th  style="width: 250px;" >Detail</th>
+                                        <th  style="width: 250px;" >Point</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
@@ -54,14 +54,19 @@
                                                 </div>
                                             </td>
                                             <td>{{ $item->name ?? '' }}</td> 
-                                            
+
                                             <td>
-                                           
-                                            </td>
-                                            
-                                            <td class="text-right">
                                                 <a href="{{ route('pemberkasan.detail', $item->id) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
                                             </td> 
+
+                                            <td>
+                                                <select type="text" name="pointpemberkasan" id="" class="form-control">
+                                                    <option value="100" >100</option>
+                                                    <option value="100" >80</option>
+                                                    <option value="100" >75</option>
+                                                </select>
+                                                <a href="{{route ('pemberkasan.index')}}" method="post" class="btn btn-sm btn-info">Simpan</a> 
+                                            </td>
 
                                         </tr>
                                     @empty

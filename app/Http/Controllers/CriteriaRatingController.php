@@ -95,7 +95,7 @@ class CriteriaRatingController extends Controller
 
         $criteriarating->update($request->all());
 
-        return redirect()->route('perangkingan.criteriaratings.index')
+        return redirect()->route('criteriaratings.index')
                         ->with('success','Criteria updated successfully');
     }
 
@@ -109,7 +109,7 @@ class CriteriaRatingController extends Controller
     {
         $criteriarating->delete();
 
-        return redirect()->route('perangkingan.criteriaratings.index')
+        return redirect()->route('criteriaratings.index')
                         ->with('success','Criteria deleted successfully');
     }
 }

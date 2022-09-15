@@ -52,10 +52,10 @@
                             <form action="{{route('alternatives.store')}}" method="POST">
                                 @csrf
                                 <div class="form-group">
-                                    <label for="name">Name :</label>
+                                    <label for="name">Nama Guru :</label>
                                     <div class="input-group">
                                         <input id="name" type="text" class="form-control"
-                                            placeholder="Someone or Something" name="name" required>
+                                            placeholder="Tuliskan Nama Guru" name="name" required>
                                     </div>
                                 </div>
                                 @foreach ($criteriaweights as $cw)

@@ -12,10 +12,13 @@ use Auth;
 
 class PemberkasanController extends Controller
 {
-    public function index()
+    public function index(Request $request)
 
     {   
         $pemberkasan= Pemberkasan::join('tb_staff','tb_staff.id','=','tb_pemberkasan.id_user')->get();
+        $pointberkas=Pemberkasan::create([
+            'pointpemberkasan'=>$request->pointpemberkasan
+            ]);
         return view ('pemberkasan.index',[
             'pemberkasan'=> $pemberkasan
         ]);

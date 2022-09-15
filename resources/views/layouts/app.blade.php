@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+    <link rel="stylesheet" href="{{asset('/css/datatables.min.css')}}" />
     <style type="text/css">
         .divider{
 width : 100%;
@@ -53,6 +54,7 @@ margin: 1 rem 0;
     <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.0.0-alpha.2/dist/js/adminlte.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.bundle.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js@2.7.3/dist/Chart.min.js"></script>
+    <script src="{{asset('assets/js/datatables.min.js')}}"></script>
     <script src="{{ asset('js/jquery.inputmask.bundle.min.js') }}"></script>
     <link href="{{ asset('src/css/mk-notifications.css')}}" rel="stylesheet">
     <script src="{{ asset('src/js/mk-notifications.js')}}"></script>

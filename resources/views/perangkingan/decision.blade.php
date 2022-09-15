@@ -74,52 +74,19 @@
     <script src="{{ asset('js/sweetalert-dev.js') }}"></script>
     <script src="{{ asset('js/datatables.js') }}"></script>
     <script>
-        function hapus(id){
-            swal({
-            title: 'Yakin.. ?',
-            text: "Data anda akan dihapus. Tekan tombol yes untuk melanjutkan.",
-            type: 'warning',
-            showCancelButton: true,
-            confirmButtonColor: '#3085d6',
-            cancelButtonColor: '#d33',
-            confirmButtonText: 'Yes!',
-            closeOnConfirm: false,
-            closeOnCancel: false
-            },
-            function(isConfirm){
-                if (isConfirm) {
-                    $.ajax({
-                        url:"{{URL::to('/perangkingan/destroy')}}",
-                        data:"id=" + id ,
-                        success: function(data)
-                        {
-                            swal("Deleted", data.message, "success");
-                            $("#count").html(data.count);
-                            $("#hide"+id).hide(300);
-                        }
-                    });
-                    
-                }else{
-                    swal("Canceled", "Anda Membatalkan! :)","error");
-                }
+        $(function () {
+            $('[data-toggle="tooltip"]').tooltip()
+    
+            $('#mytable').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
             });
-        }
+        });
     </script>
 
-<script>
-    $(function () {
-        $('[data-toggle="tooltip"]').tooltip()
-
-        $('#mytable').DataTable({
-            "paging": true,
-            "lengthChange": false,
-            "searching": false,
-            "ordering": true,
-            "info": true,
-            "autoWidth": false,
-            "responsive": true,
-        });
-    });
-
-</script>
 @endsection

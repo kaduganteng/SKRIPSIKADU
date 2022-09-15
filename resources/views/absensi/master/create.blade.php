@@ -23,7 +23,7 @@
                                 </a>
                             </div>
                             </div> 
-                            <form action="{{ route('absensi.store') }}" method="POST" class="form-horizontal">
+                            <form action="{{ route('absensi.store') }}" method="POST" class="form-horizontal" >
                                 @csrf
                                 @include('absensi.master._form')
                             </form>

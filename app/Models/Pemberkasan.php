@@ -23,6 +23,7 @@ class Pemberkasan extends Model
     'tugas_strukturdntidak',
     'program_bimbingankonseling',
     'buku_daftarkelas',
-    'daftar_nilai'
-         ];
+    'daftar_nilai',
+    'pointpemberkasan'
+   ];
 }

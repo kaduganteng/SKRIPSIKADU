@@ -136,8 +136,8 @@
                     </li>
                     <li class="nav-header">Menu Perangkingan</li>
 
-                    <li class="nav-item has-treeview {{ $page == 'absensi' ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                    <li class="nav-item has-treeview {{ $page == 'fitur' ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ $page == 'fitur' ? 'active' : '' }}">
                             <i class="fa fa-area-chart"></i>
                             <p>
                                 Criteria & Alternative
@@ -166,8 +166,8 @@
                         </ul>
                     </li>
 
-                    <li class="nav-item has-treeview {{ $page == 'absensi' ? 'menu-open' : '' }}">
-                        <a href="#" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                    <li class="nav-item has-treeview {{ $page == 'hasil' ? 'menu-open' : '' }}">
+                        <a href="#" class="nav-link {{ $page == 'hasil' ? 'active' : '' }}">
                             <i class="nav-icon fa fa-bar-chart"></i>
                             <p>
                                 Hasil
@@ -176,19 +176,19 @@
                         </a>
                         <ul class="nav nav-treeview">
                             <li class="nav-item">
-                                <a href="{{ url('decision') }}" class="nav-link {{ $page == 'schedule' ? 'active' : '' }}">
+                                <a href="{{ url('decision') }}" class="nav-link {{ $page == 'decision' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Decision</p>
                                 </a>
                             </li>
                             <li class="nav-item">
-                            <a href="{{ url('normalization') }}" class="nav-link {{ $page == 'absensi' ? 'active' : '' }}">
+                            <a href="{{ url('normalization') }}" class="nav-link {{ $page == 'normalization' ? 'active' : '' }}">
                                 <i class="nav-icon fa fa-circle-o"></i>
                                 <p>Normalization</p>
                             </a>
                             </li>
                             <li class="nav-item">
-                                <a href="{{ url('rank') }}" class="nav-link {{ $page == 'cuti' ? 'active' : '' }}">
+                                <a href="{{ url('rank') }}" class="nav-link {{ $page == 'rank' ? 'active' : '' }}">
                                     <i class="nav-icon fa fa-circle-o"></i>
                                     <p>Ranking</p>
                                 </a>

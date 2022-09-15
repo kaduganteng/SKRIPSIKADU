@@ -16,6 +16,7 @@ class CriteriaWeightController extends Controller
     {
         $criteriaweights = CriteriaWeight::get();
         return view('perangkingan.criteriaweight.index', compact('criteriaweights'))->with('i', 0);
+
     }
 
     /**
@@ -45,7 +46,7 @@ class CriteriaWeightController extends Controller
 
         CriteriaWeight::create($request->all());
 
-        return redirect()->route('perangkingan.criteriaweights.index')
+        return redirect()->route('criteriaweight.index')
                         ->with('success','Criteria created successfully.');
     }
 
@@ -89,7 +90,7 @@ class CriteriaWeightController extends Controller
 
         $criteriaweight->update($request->all());
 
-        return redirect()->route('perangkingan.criteriaweights.index')
+        return redirect()->route('criteriaweights.index')
                         ->with('success','Criteria updated successfully');
     }
 
@@ -103,7 +104,7 @@ class CriteriaWeightController extends Controller
     {
         $criteriaweight->delete();
 
-        return redirect()->route('perangkingan.criteriaweights.index')
+        return redirect()->route('criteriaweights.index')
                         ->with('success','Criteria deleted successfully');
     }
 }

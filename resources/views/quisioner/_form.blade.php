@@ -30,19 +30,19 @@
                         </label>
                         <div class="form-check">
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point1" id="point1" value="10">
+                                <input type="radio" class="form-check-input" name="point1" id="point1" value="1">
                                 <label for="point1" class="form-check-label">
                                     cukup
                                 </label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point1" id="point1" value="15">
+                                <input type="radio" class="form-check-input" name="point1" id="point1" value="3">
                                 <label for="point1" class="form-check-label">
                                     baik
                                 </label> 
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point1" id="point1" value="20">
+                                <input type="radio" class="form-check-input" name="point1" id="point1" value="5">
                                 <label for="point1" class="form-check-label">
                                     sangat baik
                                 </label> 
@@ -55,19 +55,19 @@
                         </label>
                         <div class="form-check">
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point2" id="point2" value="10">
+                                <input type="radio" class="form-check-input" name="point2" id="point2" value="1">
                                 <label for="point2" class="form-check-label">
                                     cukup
                                 </label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point2" id="point2" value="15">
+                                <input type="radio" class="form-check-input" name="point2" id="point2" value="3">
                                 <label for="point2" class="form-check-label">
                                     baik
                                 </label> 
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point2" id="point2" value="20">
+                                <input type="radio" class="form-check-input" name="point2" id="point2" value="5">
                                 <label for="point2" class="form-check-label">
                                     sangat baik
                                 </label> 
@@ -80,19 +80,19 @@
                         </label>
                         <div class="form-check">
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point3" id="point3" value="10">
+                                <input type="radio" class="form-check-input" name="point3" id="point3" value="1">
                                 <label for="point3" class="form-check-label">
                                     cukup
                                 </label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline" >
-                                <input type="radio" class="form-check-input" name="point3" id="point3" value="15">
+                                <input type="radio" class="form-check-input" name="point3" id="point3" value="3">
                                 <label for="point3" class="form-check-label">
                                     baik
                                 </label> 
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point3" id="point3" value="20">
+                                <input type="radio" class="form-check-input" name="point3" id="point3" value="5">
                                 <label for="point3" class="form-check-label">
                                     sangat baik
                                 </label> 
@@ -105,19 +105,19 @@
                         </label>
                         <div class="form-check">
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point4" id="point4" value="10">
+                                <input type="radio" class="form-check-input" name="point4" id="point4" value="1">
                                 <label for="point4" class="form-check-label">
                                     cukup
                                 </label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point4" id="point4" value="15">
+                                <input type="radio" class="form-check-input" name="point4" id="point4" value="3">
                                 <label for="point4" class="form-check-label">
                                     baik
                                 </label> 
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point4" id="point4" value="20">
+                                <input type="radio" class="form-check-input" name="point4" id="point4" value="5">
                                 <label for="point4" class="form-check-label">
                                     sangat baik
                                 </label> 
@@ -130,19 +130,19 @@
                         </label>
                         <div class="form-check">
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point5" id="point5" value="10">
+                                <input type="radio" class="form-check-input" name="point5" id="point5" value="1">
                                 <label for="point5" class="form-check-label">
                                     cukup
                                 </label>
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point5" id="point5" value="15">
+                                <input type="radio" class="form-check-input" name="point5" id="point5" value="3">
                                 <label for="point5" class="form-check-label">
                                     baik
                                 </label> 
                             </div>
                             <div class="custom-control custom-checkbox custom-control-inline">
-                                <input type="radio" class="form-check-input" name="point5" id="point5" value="20">
+                                <input type="radio" class="form-check-input" name="point5" id="point5" value="5">
                                 <label for="point5" class="form-check-label">
                                     sangat baik
                                 </label> 

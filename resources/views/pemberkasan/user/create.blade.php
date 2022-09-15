@@ -23,7 +23,7 @@
                                 </a>
                             </div>
                             </div> 
-                            <form action="{{ route('pemberkasanuser.store') }}" method="POST" class="form-horizontal">
+                            <form action="{{ route('pemberkasanuser.store') }}" method="POST" class="form-horizontal" >
                                 @csrf
                                 @include('pemberkasan.user._form')
                             </form>

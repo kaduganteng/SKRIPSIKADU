@@ -16,7 +16,7 @@ use Illuminate\Support\Facades\Input;
 class AbsensiController extends Controller
 {
     public function index()
-    {
+    {   
         $absensi = new Absensi;
         $data['absensi']  = $absensi->groupBy( 'periode' )
                                 ->orderBy( 'tanggal_absen')

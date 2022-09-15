@@ -6,6 +6,7 @@ use App\Models\Alternative;
 use App\Models\AlternativeScore;
 use App\Models\CriteriaWeight;
 use App\Models\CriteriaRating;
+use App\Models\Master\Staff;
 use Illuminate\Http\Request;
 
 class AlternativeController extends Controller
@@ -16,7 +17,7 @@ class AlternativeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    {   
         $scores = AlternativeScore::select(
             'alternativescores.id as id',
             'alternatives.id as ida',
@@ -32,7 +33,6 @@ class AlternativeController extends Controller
         ->get();
 
         $alternatives = Alternative::get();
-
         $criteriaweights = CriteriaWeight::get();
         return view('perangkingan.alternative.index', compact('scores', 'alternatives', 'criteriaweights'))->with('i', 0);
     }
@@ -43,10 +43,10 @@ class AlternativeController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   $data['staff'] = Staff::all();
         $criteriaweights = CriteriaWeight::get();
         $criteriaratings = CriteriaRating::get();
-        return view('perangkingan.alternative.create', compact('criteriaweights', 'criteriaratings'));
+        return view('perangkingan.alternative.create', $data, compact('criteriaweights', 'criteriaratings'));
     }
 
     /**
@@ -76,7 +76,7 @@ class AlternativeController extends Controller
             $score->save();
         }
 
-        return redirect()->route('perangkingan.alternatives.index')
+        return redirect()->route('alternatives.index')
             ->with('success', 'Alternative created successfully.');
     }
 
@@ -122,7 +122,7 @@ class AlternativeController extends Controller
             $scores[$key]->save();
         }
 
-        return redirect()->route('perangkingan.alternatives.index')
+        return redirect()->route('alternatives.index')
             ->with('success', 'Alternative updated successfully');
     }
 
@@ -137,7 +137,7 @@ class AlternativeController extends Controller
         $scores = AlternativeScore::where('alternative_id', $alternative->id)->delete();
         $alternative->delete();
 
-        return redirect()->route('perangkingan.alternatives.index')
+        return redirect()->route('alternatives.index')
             ->with('success', 'Alternative deleted successfully');
     }
 }

@@ -81,8 +81,8 @@
                                                     Kalender Pendidikan
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->kalender_pendidikan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->kalender_pendidikan}}
+                                                <a href="{{'/uploads/'.$pemberkasan->kalender_pendidikan}}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                    {{$pemberkasan->kalender_pendidikan ? $pemberkasan->kalender_pendidikan :  ""}}
                                                 </a>
                                                 </td>
                                               
@@ -96,8 +96,8 @@
                                                    Program Tahunan
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->program_tahunan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->program_tahunan}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->program_tahunan ?? "") }}" class="fancybox"  data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->program_tahunan ?? ""}}
                                                 </a>
                                                 </td>
                                              
@@ -111,8 +111,8 @@
                                                    Silabus
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->silabus) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->silabus}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->silabus) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->silabus ?? ""}}
                                                 </a>
                                                 </td>
                                              
@@ -124,8 +124,8 @@
                                                    KKM
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->kkm) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->kkm}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->kkm) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->kkm}}
                                                 </a>
                                                 </td>
                                              
@@ -137,8 +137,8 @@
                                                    Jadwal Pembelajaran
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->jadwal_pembelajaran) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->jadwal_pembelajaran}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->jadwal_pembelajaran) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->jadwal_pembelajaran}}
                                                 </a>
                                                 </td>
                                              
@@ -150,8 +150,8 @@
                                                    Rencana Pembelajaran
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->rencana_pembelajaran) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->rencana_pembelajaran}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->rencana_pembelajaran) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->rencana_pembelajaran}}
                                                 </a>
                                                 </td>
                                              
@@ -163,8 +163,8 @@
                                                    Agenda Kegiatan
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->agenda_kegiatan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->agenda_kegiatan}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->agenda_kegiatan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->agenda_kegiatan}}
                                                 </a>
                                                 </td>
                                              
@@ -176,8 +176,8 @@
                                                    Program TEvaluasi
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->program_evaluasi) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->program_evaluasi}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->program_evaluasi) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->program_evaluasi}}
                                                 </a>
                                                 </td>
                                              
@@ -189,8 +189,8 @@
                                                    Program Analisis
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->program_analisis) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->program_analisis}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->program_analisis) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->program_analisis}}
                                                 </a>
                                                 </td>
                                              
@@ -202,8 +202,8 @@
                                                    Program Perbaikan
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->program_perbaikan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->program_perbaikan}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->program_perbaikan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->program_perbaikan}}
                                                 </a>
                                                 </td>
                                              
@@ -215,8 +215,8 @@
                                                    Tugas Struktur dan Tidak 
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->tugas_strukturdntidak) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->tugas_strukturdntidak}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->tugas_strukturdntidak) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->tugas_strukturdntidak}}
                                                 </a>
                                                 </td>
                                              
@@ -228,8 +228,8 @@
                                                    Program Bimbingan Konseling
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->program_bimbingankonseling) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->program_bimbingankonseling}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->program_bimbingankonseling) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->program_bimbingankonseling}}
                                                 </a>
                                                 </td>
                                              
@@ -241,8 +241,8 @@
                                                    Buku Daftar Kelas
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->buku_daftarkelas) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->buku_daftarkelas}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->buku_daftarkelas) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->buku_daftarkelas}}
                                                 </a>
                                                 </td>
                                              
@@ -254,8 +254,8 @@
                                                    Daftar Nilai
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{ asset('upload/' . $pemberkasan->daftar_nilai) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
-                                                            {{$pemberkasan->daftar_nilai}}
+                                                <a href="{{ asset('upload/' . $pemberkasan ->daftar_nilai) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                            {{$pemberkasan ->daftar_nilai}}
                                                 </a>
                                                 </td>
                                              
