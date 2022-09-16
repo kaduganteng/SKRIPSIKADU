@@ -60,12 +60,17 @@
                                             </td> 
 
                                             <td>
-                                                <select type="text" name="pointpemberkasan" id="" class="form-control">
-                                                    <option value="100" >100</option>
-                                                    <option value="100" >80</option>
-                                                    <option value="100" >75</option>
-                                                </select>
-                                                <a href="{{route ('pemberkasan.index')}}" method="post" class="btn btn-sm btn-info">Simpan</a> 
+                                                {{$item->pointpemberkasan}}
+                                               <form action="{{route('pemberkasan.tambahpoint',[$item->id])}}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <select type="text" name="pointpemberkasan" id="" class="form-control">
+                                                <option value="100" >100</option>
+                                                <option value="100" >80</option>
+                                                <option value="100" >75</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                               </form>
                                             </td>
 
                                         </tr>

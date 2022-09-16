@@ -124,8 +124,11 @@ Route::middleware('auth')->group(function(){
             Route::get('schedule/{schedule}/edit', 'ScheduleController@edit')->name('schedule.edit');
             Route::patch('schedule/{schedule}/update', 'ScheduleController@update')->name('schedule.update');
             Route::get('schedule/{id}', 'ScheduleController@destroy')->name('schedule.destroy');
+
+            //pemmberkasan
+
             Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
-            Route::post('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
+            Route::put('pemberkasan/{id}', 'PemberkasanController@tambahpoint')->name('pemberkasan.tambahpoint');
             Route::get('pemberkasan/detail{id}', 'PemberkasanController@detail')->name('pemberkasan.detail');
             Route::get('pemberkasan/{id}', 'PemberkasanController@destroy')->name('pemberkasan.destroy');
 

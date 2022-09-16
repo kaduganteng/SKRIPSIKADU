@@ -71,7 +71,7 @@ class RankController extends Controller
                 // array_filter for removing null value caused by map,
                 // array_values for reiindex the array
                 $rates = array_values(array_filter($rates));
-
+ 
                 if ($cw->type == 'benefit') {
                     $result = $afilter[$icw]->rating / max($rates);
                     $msg = 'rate ' . $afilter[$icw]->rating . ' max ' . max($rates) . ' res ' . $result;
