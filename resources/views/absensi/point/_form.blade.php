@@ -10,7 +10,7 @@
 <div class="form-group row">
     <label class="col-md-4 col-xs-4 col-form-label">Nama Guru<span class="text-danger">*</span></label> 
     <div class="col-12 col-md-5 col-lg-5">
-        <input type="text" name="U" class="form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" value="{{ old('user_id', $roles->user_id ?? '') }}" placeholder="Masukan Nama Guru" required>
+        <input type="text" name="U" class="form-control{{ $errors->has('user_id') ? ' is-invalid' : '' }}" placeholder="Masukan Nama Guru" required>
         @if ($errors->has('user_id'))
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $errors->first('user_id') }}</strong>

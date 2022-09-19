@@ -53,8 +53,11 @@ class CriteriaRatingController extends Controller
 
         CriteriaRating::create($request->all());
 
-        return redirect()->route('criteriaratings.index')
-                        ->with('success','Criteria created successfully.');
+         $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('criteriaratings.index')->with($message);
     }
 
     /**
@@ -95,8 +98,11 @@ class CriteriaRatingController extends Controller
 
         $criteriarating->update($request->all());
 
-        return redirect()->route('criteriaratings.index')
-                        ->with('success','Criteria updated successfully');
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('criteriaratings.index')->with($message);
     }
 
     /**
@@ -109,7 +115,10 @@ class CriteriaRatingController extends Controller
     {
         $criteriarating->delete();
 
-        return redirect()->route('criteriaratings.index')
-                        ->with('success','Criteria deleted successfully');
+        $message = [
+            'alert-type'=>'danger',
+            'message'=> 'Data Berhasil Hapus'
+        ];
+        return redirect()->route('criteriaratings.index')->with($message);
     }
 }

@@ -46,8 +46,11 @@ class CriteriaWeightController extends Controller
 
         CriteriaWeight::create($request->all());
 
-        return redirect()->route('criteriaweight.index')
-                        ->with('success','Criteria created successfully.');
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('criteriaweight.index')->with($message);
     }
 
     /**
@@ -90,8 +93,11 @@ class CriteriaWeightController extends Controller
 
         $criteriaweight->update($request->all());
 
-        return redirect()->route('criteriaweights.index')
-                        ->with('success','Criteria updated successfully');
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('criteriaweight.index')->with($message);
     }
 
     /**
@@ -104,7 +110,10 @@ class CriteriaWeightController extends Controller
     {
         $criteriaweight->delete();
 
-        return redirect()->route('criteriaweights.index')
-                        ->with('success','Criteria deleted successfully');
+        $message = [
+            'alert-type'=>'danger',
+            'message'=> 'Data Berhasil Dihapus'
+        ];
+        return redirect()->route('criteriaweight.index')->with($message);
     }
 }

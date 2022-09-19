@@ -56,7 +56,11 @@
                                                 </div>
                                             </td>
                                             <td>{{ $item->tanggal_absen }}</td> 
-                                            <td >{{ $item->file_finger}}</td> 
+                                            <td >
+                                                <a href="{{ asset('/uploads'.$item->file_finger) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                    {{$item->file_finger ? $item->file_finger :  ""}}
+                                                </a>
+                                            </td> 
                                         </tr>
                                     @endforeach
                                 </tbody>

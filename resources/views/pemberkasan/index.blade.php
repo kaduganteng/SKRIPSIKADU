@@ -15,9 +15,6 @@
                                 </div>
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
-                            <a href="{{ route('pointberkas.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
-                                <i class="fas fa-eye fa-sm"></i> Input Point Berkas
-                            </a>
                         </div> 
                     </div>
                 </form>
@@ -27,7 +24,7 @@
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 order-last order-md-first">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
                                 DATA PEMBERKASAN
@@ -38,6 +35,7 @@
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama Guru</th>
                                         <th  style="width: 250px;" >Detail</th>
+                                        <th  style="width: 250px;" >Point</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
@@ -60,6 +58,21 @@
                                             <td>
                                                 <a href="{{ route('pemberkasan.detail', [$item->id]) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
                                             </td> 
+
+                                            <td>
+                                                {{$item->pointpemberkasan}}
+                                               <form action="{{route('pemberkasan.tambahpoint',[$item->id])}}" method="post">
+                                            @csrf
+                                            @method('PUT')
+                                            <select type="text" name="pointpemberkasan" id="" class="form-control">
+                                                <option value="100" >100</option>
+                                                <option value="80" >80</option>
+                                                <option value="75" >75</option>
+                                            </select>
+                                            <button type="submit" class="btn btn-info">Submit</button>
+                                               </form>
+                                            </td>
+
                                         </tr>
                                         
                                     @empty
@@ -70,34 +83,8 @@
                                 </tbody>
                             </table>
                         </div>
+                        
                     </div>
-                    <div class="col-md-4 order-first order-md-last">
-                        <div class="card">
-                           
-                            <div class="card-header bg-light">
-                               Data Point Pemberkasan
-                                <span class="badge badge-danger float-right float-xl-right mt-1"></span>
-                                <a href="{{ route('pointberkas.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
-                                    <i class="fas fa-plus fa-sm fa-fw"></i> Input Point
-                                </a>
-                            </div>
-                            <table id="datatable" class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th style="width:100px;">Nama Guru</th> 
-                                        <th>Jumlah Point</th>
-                                    </tr>
-                                </thead> 
-                                @foreach($pointberkas as $item)
-                                <tbody>
-                                    <td>{{$item->user_id}}</td>
-                                    <td>{{$item->pointberkas}}</td>
-                                </tbody>
-                                @endforeach
-                            </table>
-                        </div>
-                        </div>
-                    </div> 
                 </div>
             </div>
         </div>

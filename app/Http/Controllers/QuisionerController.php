@@ -56,7 +56,11 @@ class QuisionerController extends Controller
         'masukan'=>$request->masukan  
     ]);
 
-    return redirect()->back();
+    $message = [
+      'alert-type'=>'success',
+      'message'=> 'Terimakasih Sudah Mengisi Quisionernyaa :)'
+  ];  
+  return redirect()->back()->with($message);
 
   }
 

@@ -19,9 +19,13 @@ class PointabsenController extends Controller
    public function store(Request $request)
    {
     $pointabsen = Pointabsen::create([
-        'user_id'=>$request->user_id,
+        'user_id'=>$request->U,
         'pointabsen'=>$request->pointabsen
     ]);
-       
+    $message = [
+        'alert-type'=>'success',
+        'message'=> 'Point Berhasil Di Input'
+    ];
+    return redirect()->route('master.absensi.index')->with($message);
    }
 }

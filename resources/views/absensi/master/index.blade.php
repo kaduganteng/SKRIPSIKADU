@@ -18,7 +18,7 @@
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
-                        <a href="{{ route('absensi.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
+                        <a href="{{ route('absensi.create') }}" class="btn btn-default float-left">
                             <i class="fas fa-plus fa-sm fa-fw"></i> Mulai Absen
                         </a>
                         <a href="{{ route('filefinger.index') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
@@ -64,7 +64,7 @@
                             <div class="card-header bg-light">
                                Total Absensi
                                 <span class="badge badge-danger float-right float-xl-right mt-1"></span>
-                                <a href="{{ route('pointabsen.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
+                                <a href="{{ route('pointabsen.create') }}" class="btn btn-default float-right">
                                     <i class="fas fa-plus fa-sm fa-fw"></i> Input Point
                                 </a>
                             </div>

@@ -21,10 +21,10 @@
 <div class="form-group row">
     <label class="col-md-4 col-xs-4 col-form-label">Masukan Point <span class="text-danger">*</span></label> 
     <div class="col-12 col-md-5 col-lg-5">
-        <input type="text" name="point_berkas" class="form-control{{ $errors->has('point_berkas') ? ' is-invalid' : '' }}" value="{{ old('point_berkas', $roles->point_berkas ?? '') }}"  placeholder="Masukan Point Absen" autocomplete="off">
-        @if ($errors->has('point_berkas'))
+        <input type="text" name="pointberkas" class="form-control{{ $errors->has('pointberkas') ? ' is-invalid' : '' }}" value="{{ old('pointberkas', $roles->pointberkas ?? '') }}"  placeholder="Masukan Point Berkas" autocomplete="off">
+        @if ($errors->has('pointberkas'))
             <span class="invalid-feedback" role="alert">
-                <strong>{{ $errors->first('point_berkas') }}</strong>
+                <strong>{{ $errors->first('pointberkas') }}</strong>
             </span>
         @endif
     </div> 

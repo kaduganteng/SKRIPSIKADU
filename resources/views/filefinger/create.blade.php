@@ -23,7 +23,7 @@
                                 </a>
                             </div>
                             </div> 
-                            <form action="{{ route('filefinger.store') }}" method="POST" class="form-horizontal" >
+                            <form action="{{ route('filefinger.store') }}" method="POST" class="form-horizontal" enctype="multipart/form-data">
                                 @csrf
                                 @include('filefinger._form')
                             </form>

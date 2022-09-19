@@ -10,18 +10,22 @@ class PointberkasController extends Controller
     public function create()
     {
      $data['title'] = "input Point Absensi";
-     $pointabsen = Pointberkas::all();
+     $pointberkas = Pointberkas::all();
      return view('pemberkasan.point.create',$data, [
-         'pointabsen'=>$pointabsen
+         'pointberkas'=>$pointberkas
      ]);
     }
  
     public function store(Request $request)
     {
-     $pointabsen = Pointberkas::create([
+     $pointberkas = Pointberkas::create([
          'user_id'=>$request->user_id,
-         'pointabsen'=>$request->point_absen
+         'pointberkas'=>$request->pointberkas
      ]);
-        
+     $message = [
+        'alert-type'=>'success',
+        'message'=> 'Point Berhasil Di Input'
+    ];
+    return redirect()->route('pemberkasan.index')->with($message);
     }
 }

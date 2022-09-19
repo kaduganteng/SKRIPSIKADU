@@ -75,9 +75,11 @@ class AlternativeController extends Controller
             $score->rating_id = $request->input('criteria')[$cw->id];
             $score->save();
         }
-
-        return redirect()->route('alternatives.index')
-            ->with('success', 'Alternative created successfully.');
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('alternatives.index')->with($message);
     }
 
     /**
@@ -122,8 +124,11 @@ class AlternativeController extends Controller
             $scores[$key]->save();
         }
 
-        return redirect()->route('alternatives.index')
-            ->with('success', 'Alternative updated successfully');
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('alternatives.index')->with($message);
     }
 
     /**
@@ -137,7 +142,10 @@ class AlternativeController extends Controller
         $scores = AlternativeScore::where('alternative_id', $alternative->id)->delete();
         $alternative->delete();
 
-        return redirect()->route('alternatives.index')
-            ->with('success', 'Alternative deleted successfully');
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Data Berhasil Diinput'
+        ];
+        return redirect()->route('alternatives.index')->with($message);
     }
 }

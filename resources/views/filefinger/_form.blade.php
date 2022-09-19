@@ -10,7 +10,7 @@
 <div class="form-group row">
     <label class="col-md-4 col-xs-4 col-form-label">Tanggal Absen <span class="text-danger">*</span></label> 
     <div class="col-12 col-md-5 col-lg-5">
-        <input type="date" name="U" class="form-control{{ $errors->has('tanggal_absen') ? ' is-invalid' : '' }}" value="{{ old('tanggal_absen', $roles->tanggal_absen ?? '') }}" placeholder="Isi Tanggal Absensi" required>
+        <input type="date" name="tanggal_absen" class="form-control{{ $errors->has('tanggal_absen') ? ' is-invalid' : '' }}" value="{{ old('tanggal_absen', $roles->tanggal_absen ?? '') }}" placeholder="Isi Tanggal Absensi" required>
         @if ($errors->has('tanggal_absen'))
             <span class="invalid-feedback" role="alert">
                 <strong>{{ $errors->first('tanggal_absen') }}</strong>

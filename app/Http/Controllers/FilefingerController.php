@@ -24,8 +24,9 @@ class FilefingerController extends Controller
 
     public function store(Request $request)
     {
+
         $fingerprint = $request->file('file_finger');
-        $nama_filefingerprint = time() . "." . $fingerprint->getClientOriginalName();
+        $nama_filefingerprint = time() . "_" . $fingerprint->getClientOriginalName();
         $tujuan = 'upload/';
         $fingerprint->move($tujuan, $nama_filefingerprint);
 
@@ -33,6 +34,10 @@ class FilefingerController extends Controller
             'tanggal_absen'=>$request->tanggal_absen,
             'file_finger'=>$request->file_finger
         ]);
-        
+        $message = [
+            'alert-type'=>'success',
+            'message'=> 'Point Berhasil Di Input'
+        ];
+        return redirect()->route('filefinger.index')->with($message);
     }
 }
