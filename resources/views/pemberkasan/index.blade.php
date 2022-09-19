@@ -15,6 +15,9 @@
                                 </div>
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
+                            <a href="{{ route('pointberkas.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
+                                <i class="fas fa-eye fa-sm"></i> Input Point Berkas
+                            </a>
                         </div> 
                     </div>
                 </form>
@@ -24,7 +27,7 @@
         <div class="content pb-5">
               <div class="container-fluid">
                 <div class="row">
-                    <div class="col-12">
+                    <div class="col-md-8 order-last order-md-first">
                         <div class="card">
                             <div class="card-header bg-light">
                                 DATA PEMBERKASAN
@@ -35,7 +38,6 @@
                                         <th class="text-center" style="width: 100px;">#</th> 
                                         <th>Nama Guru</th>
                                         <th  style="width: 250px;" >Detail</th>
-                                        <th  style="width: 250px;" >Point</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
@@ -49,31 +51,17 @@
                                                     {{-- 
                                                     <div class="dropdown-divider"></div> --}}
                                                     <a class="dropdown-item" href="javascript:void(0)" onClick="hapus({{$item->id}})">
-                                                        <i class="far fa-trash-alt mr-2"></i> Hapus
+                                                        <i class="far fa-trash-alt mr-2"></i> {{ $item->id }}
                                                     </a>
                                                 </div>
                                             </td>
                                             <td>{{ $item->name ?? '' }}</td> 
 
                                             <td>
-                                                <a href="{{ route('pemberkasan.detail', $item->id) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
+                                                <a href="{{ route('pemberkasan.detail', [$item->id]) }}" class="btn btn-sm btn-info">Detail Berkas</a>    
                                             </td> 
-
-                                            <td>
-                                                {{$item->pointpemberkasan}}
-                                               <form action="{{route('pemberkasan.tambahpoint',[$item->id])}}" method="post">
-                                            @csrf
-                                            @method('PUT')
-                                            <select type="text" name="pointpemberkasan" id="" class="form-control">
-                                                <option value="100" >100</option>
-                                                <option value="100" >80</option>
-                                                <option value="100" >75</option>
-                                            </select>
-                                            <button type="submit" class="btn btn-info">Submit</button>
-                                               </form>
-                                            </td>
-
                                         </tr>
+                                        
                                     @empty
                                                 <tr>
                                                     <td class="text-center" colspan="9">Tidak ada data untuk ditampilkan</td>
@@ -83,6 +71,33 @@
                             </table>
                         </div>
                     </div>
+                    <div class="col-md-4 order-first order-md-last">
+                        <div class="card">
+                           
+                            <div class="card-header bg-light">
+                               Data Point Pemberkasan
+                                <span class="badge badge-danger float-right float-xl-right mt-1"></span>
+                                <a href="{{ route('pointberkas.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
+                                    <i class="fas fa-plus fa-sm fa-fw"></i> Input Point
+                                </a>
+                            </div>
+                            <table id="datatable" class="table table-hover table-striped">
+                                <thead>
+                                    <tr>
+                                        <th style="width:100px;">Nama Guru</th> 
+                                        <th>Jumlah Point</th>
+                                    </tr>
+                                </thead> 
+                                @foreach($pointberkas as $item)
+                                <tbody>
+                                    <td>{{$item->user_id}}</td>
+                                    <td>{{$item->pointberkas}}</td>
+                                </tbody>
+                                @endforeach
+                            </table>
+                        </div>
+                        </div>
+                    </div> 
                 </div>
             </div>
         </div>

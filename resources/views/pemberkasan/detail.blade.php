@@ -55,6 +55,8 @@
                                                 <td width="10" class="text-center">:</td>
                                                 <td>{{ $staff->position_id }}</td>
                                             </tr>
+                                            <tr>
+                                           
                                             </table>
                                             </table>
                                         </div>
@@ -81,7 +83,7 @@
                                                     Kalender Pendidikan
                                                 </td>
                                                 <td colspan="3"style="text-align: center;">
-                                                <a href="{{'/uploads/'.$pemberkasan->kalender_pendidikan}}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
+                                                <a href="{{ asset('/uploads'.$pemberkasan->kalender_pendidikan) }}" class="fancybox" data-fancybox="ggblg" data-gallery="gallery" height="50px" width="50px">
                                                     {{$pemberkasan->kalender_pendidikan ? $pemberkasan->kalender_pendidikan :  ""}}
                                                 </a>
                                                 </td>

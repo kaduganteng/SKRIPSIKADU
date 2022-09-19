@@ -8,6 +8,7 @@ use App\Models\Master\Staff;
 use App\Models\Master\Keterangan;
 use App\Models\Master\Attendance;
 use App\Models\Master\Departement;
+use App\Models\Pointabsen;
 use App\Models\Salary;
 use App\Models\Schedule;
 use DB;
@@ -23,7 +24,10 @@ class AbsensiController extends Controller
                                 ->select(DB::raw('count(*) as count, periode, tanggal_absen'))
                                 ->get();
         $data['count']  =  count($data['absensi']);
-        return view('absensi.master.index', $data);
+        $pointabsen = Pointabsen::all();
+        return view('absensi.master.index', $data ,[
+            'pointabsen'=>$pointabsen
+        ]);
     }   
 
     public function create()

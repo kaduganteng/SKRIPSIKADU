@@ -24,6 +24,5 @@ class Pemberkasan extends Model
     'program_bimbingankonseling',
     'buku_daftarkelas',
     'daftar_nilai',
-    'pointpemberkasan'
    ];
 }

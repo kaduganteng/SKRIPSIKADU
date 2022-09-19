@@ -21,7 +21,7 @@ class ProfileController extends Controller
     {
         $data['title'] = "Upload Foto Profile";
         return view('employee._update_foto', $data);
-    }
+}
 
     public function uploadPhoto(Request $request)
     {

@@ -118,6 +118,7 @@ Route::middleware('auth')->group(function(){
         Route::get('absensi/detail/periode={periode}', 'AbsensiController@show')->name('absensi.detail');
         Route::get('absensi/export/excel/periode={periode}/filter={filter}', 'AbsensiController@excel')->name('absensi.export.excel');
 
+
         Route::middleware('role:admin')->group(function(){
             Route::get('schedule/create', 'ScheduleController@create')->name('schedule.create');
             Route::post('schedule', 'ScheduleController@store')->name('schedule.store');
@@ -129,12 +130,32 @@ Route::middleware('auth')->group(function(){
 
             Route::get('pemberkasan', 'PemberkasanController@index')->name('pemberkasan.index');
             Route::put('pemberkasan/{id}', 'PemberkasanController@tambahpoint')->name('pemberkasan.tambahpoint');
-            Route::get('pemberkasan/detail{id}', 'PemberkasanController@detail')->name('pemberkasan.detail');
-            Route::get('pemberkasan/{id}', 'PemberkasanController@destroy')->name('pemberkasan.destroy');
+            Route::get('pemberkasan/detail/{id}', 'PemberkasanController@detail')->name('pemberkasan.detail');
+            // Route::get('pemberkasan/{id}', 'PemberkasanController@destroy')->name('pemberkasan.destroy');
 
         });
 
     });
+
+    //POINT
+
+    //Pointabsen
+    Route::get('pointabsen/create', 'PointabsenController@create')->name('pointabsen.create');
+    Route::post('pointabsen/store', 'PointabsenController@store')->name('pointabsen.store');
+
+     //Pointberkas
+     Route::get('pointberkas/create', 'PointberkasController@create')->name('pointberkas.create');
+     Route::post('pointberkas/store', 'PointberkasController@store')->name('pointberkas.store');
+
+
+    //file finger
+    Route::get('filefinger', 'FilefingerController@index')->name('filefinger.index');
+    Route::get('filefinger/create', 'FilefingerController@create')->name('filefinger.create');
+    Route::post('filefinger/detail/create', 'FilefingerController@store')->name('filefinger.store');
+    Route::get('filefinger/delete/{id}', 'FilefingerController@destroy')->name('filefinger.destroy');
+
+
+
     //Quisioner
     Route::get('quisioner', 'QuisionerController@index')->name('quisioner.index');
     Route::post('quisioner/store', 'QuisionerController@store')->name('quisioner.store');

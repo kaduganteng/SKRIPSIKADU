@@ -18,85 +18,55 @@
                             </div>
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
-                        <a href="{{ route('absensi.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
-                            <i class="fas fa-plus fa-sm fa-fw"></i> Mulai Absen
-                        </a>
-                        <a href="{{ route('filefinger.index') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
-                            <i class="fas fa-eye fa-sm"></i> Lihat File Finger Print
+                        <a href="{{ route('filefinger.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
+                            <i class="fas fa-eye fa-sm"></i> Input File
                         </a>
                     </div>
                 </form>
             </div>
         </div>
         <div class="content pb-5">
-              <div class="container-fluid">
+            <div class="container-fluid">
                 <div class="row">
-                    <div class="col-md-8 order-last order-md-first">
+                    <div class="col-12">
                         <div class="card">
                             <div class="card-header bg-light">
-                                Data Absen
-                                <span class="badge badge-danger float-right float-xl-right mt-1">{{ $count }}</span>
+                                <a href="{{ route('absensi.index') }}" title="Kembali" data-toggle="tooltip" data-placement="right" class="btn text-muted">
+                                    <i class="fa fa-arrow-left fa-fw"></i></span>
+                                </a>
+                                Data File FingerPrint
+                                <span class="badge badge-danger float-center float-xl-center mt-1"></span>
                             </div>
-                            <table id="datatable" class="table table-hover table-striped">
-                                <thead>
+                            <table id="datatable" class="table table-hover table-striped ">
+                                <thead class="bg-white">
                                     <tr>
-                                        <th style="width:100px;">Action</th> 
-                                        <th>Periode</th>
+                                        <th style="min-width:50px;"></th> 
+                                        <th>Tanggal Absen</th> 
+                                        <th>File Absen FingerPrint</th>
                                     </tr>
                                 </thead> 
                                 <tbody>
-                                    @foreach ($absensi as $item)
-                                        <tr>
+                                    @foreach ($filefinger as $item)
+                                        <tr id="hide{{ $item->id }}">
                                             <td class="text-left">
-                                                <a href="{{ route('absensi.detail', $item->periode) }}" class="btn btn-success btn-sm">
-                                                    <i class="fas fa-eye fa-sm"></i> Lihat Absen
-                                                </a>
+                                                <a href="#" class="text-secondary nav-link p-0" title="Lihat opsi" data-toggle="dropdown" aria-expanded="false"><i class="fa fa-ellipsis-v"></i></a>
+                                                <div class="dropdown-menu text-center">
+                                                    <a href="{{ route('roles.edit', $item->id) }}" class="text-secondary mx-2" data-toggle="tooltip" title="Edit"><i class="fa fa-edit"></i></a> 
+                                                    <a href="javascript:void(0)" onClick="hapus({{$item->id}})" class="text-secondary ml-2" data-toggle="tooltip" title="Hapus"><i class="fa fa-trash"></i></a>
+                                                </div>
                                             </td>
-                                            <td>{{ str_replace('-', ', ', strtoupper($item->periode)) }}</td>
+                                            <td>{{ $item->tanggal_absen }}</td> 
+                                            <td >{{ $item->file_finger}}</td> 
                                         </tr>
                                     @endforeach
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="col-md-4 order-first order-md-last">
-                        <div class="card">
-                            <div class="card-header bg-light">
-                               Total Absensi
-                                <span class="badge badge-danger float-right float-xl-right mt-1"></span>
-                                <a href="{{ route('pointabsen.create') }}" class="btn btn-default d-none d-md-inline-block ml-auto">
-                                    <i class="fas fa-plus fa-sm fa-fw"></i> Input Point
-                                </a>
-                            </div>
-                            <table id="datatable" class="table table-hover table-striped">
-                                <thead>
-                                    <tr>
-                                        <th style="width:100px;">Nama Guru</th> 
-                                        <th>Jumlah Absensi</th>
-                                    </tr>
-                                </thead> 
-                                @foreach($pointabsen as $item)
-                                <tbody>
-                                    <td>{{$item->user_id}}</td>
-                                    <td>{{$item->pointabsen}}</td>
-                                </tbody>
-                                @endforeach
-                            </table>
-                        </div>
-                        </div>
-                    </div>                    
-
                 </div>
-
-               
             </div>
         </div>
     </div>
-
-    <a href="{{ route('absensi.create') }}" class="btn btn-lg rounded-circle btn-primary btn-fly d-block d-md-none app-shadow">
-        <span><i class="fas fa-plus fa-sm align-middle"></i>wwww</span>
-    </a>
-
 @endsection
 
 @section('scripts')
