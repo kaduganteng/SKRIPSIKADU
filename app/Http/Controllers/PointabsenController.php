@@ -26,6 +26,6 @@ class PointabsenController extends Controller
         'alert-type'=>'success',
         'message'=> 'Point Berhasil Di Input'
     ];
-    return redirect()->route('master.absensi.index')->with($message);
+    return redirect()->route('absensi.index')->with($message);
    }
 }

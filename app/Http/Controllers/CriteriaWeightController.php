@@ -97,7 +97,7 @@ class CriteriaWeightController extends Controller
             'alert-type'=>'success',
             'message'=> 'Data Berhasil Diinput'
         ];
-        return redirect()->route('criteriaweight.index')->with($message);
+        return redirect()->route('perangkingan.criteriaweight.index')->with($message);
     }
 
     /**

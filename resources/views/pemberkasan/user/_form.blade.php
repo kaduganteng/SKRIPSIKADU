@@ -59,10 +59,10 @@
                                                     Kalender Pendidikan
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->kalender_pendidikan == null)
+                                                    @if(!$pemberkasan || $pemberkasan->kalender_pendidikan == null)
                                                         <input type="file" name="kalender" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->kalender_pendidikan}}" disabled>
+                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->kalender_pendidikan}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -76,10 +76,10 @@
                                                     Program Tahunan
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->program_tahunan == null)
+                                                    @if(!$pemberkasan || $pemberkasan->program_tahunan == null)
                                                     <input type="file" name="programtahunan" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->program_tahunan}}" disabled>
+                                                        <input type="text" class="form-control" name="programtahunan" value="{{$pemberkasan->program_tahunan}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -93,10 +93,10 @@
                                                     Silabus
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->silabus == null)
+                                                    @if(!$pemberkasan || $pemberkasan->silabus == null)
                                                     <input type="file" name="silabus" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->silabus}}" disabled>
+                                                        <input type="text" class="form-control" name="silabus" value="{{$pemberkasan->silabus}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -108,10 +108,10 @@
                                                     KKM
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->kkm == null)
+                                                    @if(!$pemberkasan || $pemberkasan->kkm == null)
                                                     <input type="file" name="kkm" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->kkm}}" disabled>
+                                                        <input type="text" class="form-control" name="kkm" value="{{$pemberkasan->kkm}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -123,10 +123,10 @@
                                                     Jadwal Pembelajaran
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->jadwal_pembelajaran == null)
+                                                    @if(!$pemberkasan || $pemberkasan->jadwal_pembelajaran == null)
                                                     <input type="file" name="jadwalpembelajaran" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->jadwal_pembelajaran}}" disabled>
+                                                        <input type="text" class="form-control" name="jadwalpembelajaran" value="{{$pemberkasan->jadwal_pembelajaran}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -138,10 +138,10 @@
                                                     Rencana Pembelajaran
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->rencana_pembelajaran == null)
+                                                    @if(!$pemberkasan || $pemberkasan->rencana_pembelajaran == null)
                                                     <input type="file" name="rencanapembelajaran" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->rencana_pembelajaran}}" disabled>
+                                                        <input type="text" class="form-control" name="rencanapembelajaran" value="{{$pemberkasan->rencana_pembelajaran}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -153,10 +153,10 @@
                                                     Agenda Kegiatan
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->agenda_kegiatan == null)
+                                                    @if(!$pemberkasan || $pemberkasan->agenda_kegiatan == null)
                                                     <input type="file" name="agendakegiatan" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->agenda_kegiatan}}" disabled>
+                                                        <input type="text" class="form-control" name="agendakegiatan" value="{{$pemberkasan->agenda_kegiatan}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -168,10 +168,10 @@
                                                     Program Evaluasi
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->program_evaluasi == null)
+                                                    @if(!$pemberkasan || $pemberkasan->program_evaluasi == null)
                                                     <input type="file" name="programevaluasi" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->program_evaluasi}}" disabled>
+                                                        <input type="text" class="form-control" name="programevaluasi" value="{{$pemberkasan->program_evaluasi}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -183,10 +183,10 @@
                                                     Program Analisis
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->program_analisis == null)
+                                                    @if(!$pemberkasan || $pemberkasan->program_analisis == null)
                                                     <input type="file" name="programanalisis" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->program_analisis}}" disabled>
+                                                        <input type="text" class="form-control" name="programanalisis" value="{{$pemberkasan->program_analisis}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -198,10 +198,10 @@
                                                     Program Perbaikan
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->program_perbaikan == null)
+                                                    @if(!$pemberkasan || $pemberkasan->program_perbaikan == null)
                                                     <input type="file" name="programperbaikan" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->program_perbaikan}}" disabled>
+                                                        <input type="text" class="form-control" name="programperbaikan" value="{{$pemberkasan->program_perbaikan}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -213,10 +213,10 @@
                                                     Tugas Struktur dan Tidak
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->tugas_strukturdantidak == null)
+                                                    @if(!$pemberkasan || $pemberkasan->tugas_strukturdantidak == null)
                                                     <input type="file" name="tugasstrukturdantidak" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->tugas_strukturdantidak}}" disabled>
+                                                        <input type="text" class="form-control" name="tugasstrukturdantidak" value="{{$pemberkasan->tugas_strukturdantidak}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -228,10 +228,10 @@
                                                     Program Bimbingan Konseling
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->program_bimbingankonseling == null)
+                                                    @if(!$pemberkasan || $pemberkasan->program_bimbingankonseling == null)
                                                     <input type="file" name="programbimbingankonseling" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->program_bimbingankonseling}}" disabled>
+                                                        <input type="text" class="form-control" name="programbimbingankonseling" value="{{$pemberkasan->program_bimbingankonseling}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -243,10 +243,10 @@
                                                     Buku Daftar Kelas
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->buku_daftarkelas == null)
+                                                    @if(!$pemberkasan || $pemberkasan->buku_daftarkelas == null)
                                                     <input type="file" name="bukudaftarkelas" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->buku_daftarkelas}}" disabled>
+                                                        <input type="text" class="form-control" name="bukudaftarkelas" value="{{$pemberkasan->buku_daftarkelas}}" readonly>
                                                     @endif
                                                 </td>
                                               
@@ -258,10 +258,10 @@
                                                     Daftar Nilai
                                                 </td>
                                                 <td>
-                                                    @if($pemberkasan->daftar_nilai == null)
+                                                    @if(!$pemberkasan || $pemberkasan->daftar_nilai == null)
                                                     <input type="file" name="daftarnilai" >
                                                     @else 
-                                                        <input type="text" class="form-control" name="kalender" value="{{$pemberkasan->daftar_nilai}}" disabled>
+                                                        <input type="text" class="form-control" name="daftarnilai" value="{{$pemberkasan->daftar_nilai}}" readonly>
                                                     @endif
                                                 </td>
                                               

@@ -47,13 +47,13 @@ class PemberkasanUserController extends Controller
         }
 
         //programtahunan
-        if($request->file('programtahunan') !=null ){
+        if($request->file('programtahunan') != null ){
                 $programtahunan = $request->file('programtahunan');
                 $nama_fileprogramtahunan = time() . "." . $programtahunan->getClientOriginalName();
                 $tujuan = 'upload/';
                 $programtahunan->move($tujuan, $nama_fileprogramtahunan);
         }
-        elseif($getdata->program_tahunan!= null){
+        elseif($request->programtahunan != null){
             $nama_fileprogramtahunan = $getdata->program_tahunan;
         }
         else{
@@ -67,7 +67,7 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $silabus->move($tujuan, $nama_filesilabus);
             }
-        elseif($getdata->silabus!= null){
+        elseif($request->silabus != null){
                 $nama_filesilabus = $getdata->silabus;
         }
         else{
@@ -75,13 +75,13 @@ class PemberkasanUserController extends Controller
         }
 
         //kkm
-        if($request->file('kkm') !=null){
+        if($request->file('kkm') != null){
             $kkm = $request->file('kkm');
                 $nama_filekkm = time() . "." . $kkm->getClientOriginalName();
                 $tujuan = 'upload/';
                 $kkm->move($tujuan, $nama_filekkm); 
             }
-        elseif($getdata->kkm!= null){
+        elseif($request->kkm != null){
                 $nama_filekkm = $getdata->kkm;
         }
         else{
@@ -95,8 +95,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $jadwalpembelajaran->move($tujuan, $nama_filejadwalpembelajaran); 
             }
-        elseif($getdata->jadwalpembelajaran!= null){
-                $nama_filejadwalpembelajaran = $getdata->jadwalpembelajaran;
+        elseif($request->jadwalpembelajaran != null){
+                $nama_filejadwalpembelajaran = $getdata->jadwal_pembelajaran;
         }
         else{
             $nama_filejadwalpembelajaran = null;
@@ -104,14 +104,14 @@ class PemberkasanUserController extends Controller
        
         
         //reancanapembelajaran
-        if($request->file('rencanapembelajarn')!=null){
+        if($request->file('rencanapembelajaran')!=null){
                 $rencanapembelajaran = $request->file('rencanapembelajaran');
                 $nama_filerencanapembelajaran = time() . "." . $rencanapembelajaran->getClientOriginalName();
                 $tujuan = 'upload/';
                 $rencanapembelajaran->move($tujuan, $nama_filerencanapembelajaran); 
             }
-        elseif($getdata->rencanapembelajaran!= null){
-                $nama_filerencanapembelajaran = $getdata->rencanapembelajaran;
+        elseif($request->rencanapembelajaran != null){
+                $nama_filerencanapembelajaran = $getdata->rencana_pembelajaran;
         }
         else{
             $nama_filerencanapembelajaran = null;
@@ -124,8 +124,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $agendakegiatan->move($tujuan, $nama_fileagendakegiatan);
             }
-        elseif($getdata->agendakegiatan!= null){
-                $nama_fileagendakegiatan = $getdata->agendakegiatan;
+        elseif($request->agendakegiatan != null){
+                $nama_fileagendakegiatan = $getdata->agenda_kegiatan;
         }
         else{
             $nama_fileagendakegiatan = null;
@@ -138,8 +138,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $programevaluasi->move($tujuan, $nama_fileprogramevaluasi); 
             }
-        elseif($getdata->programevaluasi!= null){
-                $nama_fileprogramevaluasi = $getdata->programevaluasi;
+        elseif($request->programevaluasi != null){
+                $nama_fileprogramevaluasi = $getdata->program_evaluasi;
         }
         else{
             $nama_fileprogramevaluasi = null;
@@ -152,8 +152,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $programanalisis->move($tujuan, $nama_fileprogramanalisis);
             }
-        elseif($getdata->programanalisis!= null){
-                $nama_fileprogramanalisis = $getdata->programanalisis;
+        elseif($request->programanalisis != null){
+                $nama_fileprogramanalisis = $getdata->program_analisis;
         }
         else{
             $nama_fileprogramanalisis = null;
@@ -166,8 +166,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $programperbaikan->move($tujuan, $nama_fileprogramperbaikan);
             }
-        elseif($getdata->programperbaikan!= null){
-                $nama_fileprogramperbaikan = $getdata->programperbaikan;
+        elseif($request->programperbaikan != null){
+                $nama_fileprogramperbaikan = $getdata->program_perbaikan;
         }
         else{
             $nama_fileprogramperbaikan = null;
@@ -180,8 +180,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $tugasstrukturdantidak->move($tujuan, $nama_filetugasstrukturdantidak);
             } 
-        elseif($getdata->tugasstrukturdantidak!= null){
-                $nama_filetugasstrukturdantidak = $getdata->tugasstrukturdantidak;
+        elseif($request->tugasstrukturdantidak != null){
+                $nama_filetugasstrukturdantidak = $getdata->tugas_strukturdantidak;
         }
         else{
             $nama_filetugasstrukturdantidak = null;
@@ -194,8 +194,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $programbimbingankonseling->move($tujuan, $nama_fileprogrambimbingankonseling);
             }
-        elseif($getdata->programbimbingankonseling!= null){
-                $nama_fileprogrambimbingankonseling = $getdata->programbimbingankonseling;
+        elseif($request->programbimbingankonseling != null){
+                $nama_fileprogrambimbingankonseling = $getdata->program_bimbingankonseling;
         }
         else{
             $nama_fileprogrambimbingankonseling = null;
@@ -208,8 +208,8 @@ class PemberkasanUserController extends Controller
                 $tujuan = 'upload/';
                 $bukudaftarkelas->move($tujuan, $nama_filebukudaftarkelas); 
             }
-        elseif($getdata->bukudaftarkelas!= null){
-                $nama_filebukudaftarkelas = $getdata->bukudaftarkelas;
+        elseif($request->bukudaftarkelas != null){
+                $nama_filebukudaftarkelas = $getdata->buku_daftarkelas;
         }
         else{
             $nama_filebukudaftarkelas = null;
@@ -222,8 +222,8 @@ class PemberkasanUserController extends Controller
             $tujuan = 'upload/';
             $daftarnilai->move($tujuan, $nama_filedaftarnilai);
             }
-        elseif($getdata->daftarnilai!= null){
-                $nama_filedaftarnilai = $getdata->daftarnilai;
+        elseif($request->daftarnilai != null){
+                $nama_filedaftarnilai = $getdata->daftar_nilai;
         }
         else{
             $nama_filedaftarnilai = null;
@@ -231,7 +231,7 @@ class PemberkasanUserController extends Controller
         
 
         if($getdata==null){
-            $pemberkasan = Pemberkasan::create([
+            Pemberkasan::create([
                 'id_user'=>Auth::user()->id,
                 'kalender_pendidikan' => $nama_filekalender,
                 'program_tahunan' => $nama_fileprogramtahunan,
@@ -252,7 +252,7 @@ class PemberkasanUserController extends Controller
                 'alert-type'=>'success',
                 'message'=> 'Data Pemberkasan berhasil ditambahkan'
             ];  
-            return redirect()->route('pemberkasan.user.index')->with($message);
+            return redirect()->route('pemberkasanuser.index')->with($message);
         }
         else{
             $getdata->update([
@@ -275,7 +275,7 @@ class PemberkasanUserController extends Controller
                 'alert-type'=>'success',
                 'message'=> 'Data Pemberkasan berhasil ditambahkan'
             ];  
-            return redirect()->route('pemberkasan.user.index')->with($message);
+            return redirect()->route('pemberkasanuser.index')->with($message);
         }
     }
 
