@@ -15,9 +15,8 @@ class PemberkasanController extends Controller
 {
     public function index()
 
-    {   
+    {   $pointberkas = Pointberkas::all();
         $pemberkasan= Pemberkasan::join('tb_staff','tb_staff.id','=','tb_pemberkasan.id_user')->get();
-        $pointberkas= Pointberkas::all();
         return view ('pemberkasan.index',[
             'pemberkasan'=> $pemberkasan,
             'pointberkas'=> $pointberkas
@@ -51,11 +50,9 @@ class PemberkasanController extends Controller
     }
     public function detail($id)
     {
-        $id_user = Pemberkasan::where('id_user',$id); 
-
         $staff = Staff::find($id);
         $position = Position::find($id);
-        $pemberkasan = Pemberkasan::find($id_user);
+        $pemberkasan = Pemberkasan::find($id);
         // dd($pemberkasan);
         return view ('pemberkasan.detail',compact('pemberkasan','staff','position'));
        

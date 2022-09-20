@@ -26,13 +26,13 @@ class FilefingerController extends Controller
     {
 
         $fingerprint = $request->file('file_finger');
-        $nama_filefingerprint = time() . "_" . $fingerprint->getClientOriginalName();
+        $nama_filefingerprint = $fingerprint->getClientOriginalName();
         $tujuan = 'upload/';
         $fingerprint->move($tujuan, $nama_filefingerprint);
 
-        $filefinger = Filefinger::create([
+        Filefinger::create([
             'tanggal_absen'=>$request->tanggal_absen,
-            'file_finger'=>$request->file_finger
+            'file_finger'=>$nama_filefingerprint
         ]);
         $message = [
             'alert-type'=>'success',

@@ -9,8 +9,8 @@
         <div class="content pb-5">
             <div class="container-fluid">
                 <div class="row justify-content-center">
-                    <div class="col-md-19">
-                        <div class="card" style="align-items: center">
+                    <div class="col-md-12">
+                        <div class="card">
                             <div class="card-header" style="align-items: center">
                                 <div class="text-center">
                                     <h3 class="card-title"> {{ $title }}</h3>

@@ -17,7 +17,7 @@
                             <input type="search" placeholder="Search" aria-label="Search..." class="form-control input-flat border-0" id="search"> 
                         </div> 
                        <div class="float-right">
-                         <a href="{{ route('quisioner.create') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">
+                         <a href="{{ route('quisioner.create') }}" class="btn btn-default dloat-right app-shadow d-none d-md-inline-block ml-auto">
                             <i class="fa fa-plus-square"></i>Form Quisioner
                         </a>
                         <a href="{{ route('quisioner.detail') }}" class="btn btn-default app-shadow d-none d-md-inline-block ml-auto">

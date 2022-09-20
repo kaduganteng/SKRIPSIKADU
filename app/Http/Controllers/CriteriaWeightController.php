@@ -50,7 +50,7 @@ class CriteriaWeightController extends Controller
             'alert-type'=>'success',
             'message'=> 'Data Berhasil Diinput'
         ];
-        return redirect()->route('criteriaweight.index')->with($message);
+        return redirect()->route('criteriaweights.index')->with($message);
     }
 
     /**
@@ -114,6 +114,6 @@ class CriteriaWeightController extends Controller
             'alert-type'=>'danger',
             'message'=> 'Data Berhasil Dihapus'
         ];
-        return redirect()->route('criteriaweight.index')->with($message);
+        return redirect()->route('criteriaweights.index')->with($message);
     }
 }
